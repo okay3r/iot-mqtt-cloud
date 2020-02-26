@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ccu.iot.cloud.dao.OperationRecordDao">
+    <resultMap id="BaseResultMap" type="ccu.iot.cloud.entity.OperationRecord">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="user_id" jdbcType="INTEGER" property="userId"/>
+        <result column="node_id" jdbcType="INTEGER" property="nodeId"/>
+        <result column="op" jdbcType="VARCHAR" property="op"/>
+        <result column="is_success" jdbcType="BOOLEAN" property="isSuccess"/>
+        <result column="time" jdbcType="TIMESTAMP" property="time"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, user_id, node_id, op, is_success, `time`
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from operation_record
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <select id="selectBySelective" resultType="ccu.iot.cloud.entity.OperationRecord">
+        select
+        <include refid="Base_Column_List"/>
+        from operation_record
+        <where>
+            <if test="userId != null">
+                and user_id = #{userId,jdbcType=INTEGER}
+            </if>
+            <if test="nodeId != null">
+                and node_id = #{nodeId,jdbcType=INTEGER}
+            </if>
+            <if test="op != null">
+                and op = #{op,jdbcType=VARCHAR}
+            </if>
+            <if test="isSuccess != null">
+                and is_success = #{isSuccess,jdbcType=BOOLEAN}
+            </if>
+            <if test="time != null">
+                and `time` = #{time,jdbcType=TIMESTAMP}
+            </if>
+        </where>
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from operation_record
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="ccu.iot.cloud.entity.OperationRecord"
+            useGeneratedKeys="true">
+    insert into operation_record (user_id, node_id, op, 
+      is_success, `time`)
+    values (#{userId,jdbcType=INTEGER}, #{nodeId,jdbcType=INTEGER}, #{op,jdbcType=VARCHAR}, 
+      #{isSuccess,jdbcType=BOOLEAN}, #{time,jdbcType=TIMESTAMP})
+  </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="ccu.iot.cloud.entity.OperationRecord"
+            useGeneratedKeys="true">
+        insert into operation_record
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="nodeId != null">
+                node_id,
+            </if>
+            <if test="op != null">
+                op,
+            </if>
+            <if test="isSuccess != null">
+                is_success,
+            </if>
+            <if test="time != null">
+                `time`,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="nodeId != null">
+                #{nodeId,jdbcType=INTEGER},
+            </if>
+            <if test="op != null">
+                #{op,jdbcType=VARCHAR},
+            </if>
+            <if test="isSuccess != null">
+                #{isSuccess,jdbcType=BOOLEAN},
+            </if>
+            <if test="time != null">
+                #{time,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="ccu.iot.cloud.entity.OperationRecord">
+        update operation_record
+        <set>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="nodeId != null">
+                node_id = #{nodeId,jdbcType=INTEGER},
+            </if>
+            <if test="op != null">
+                op = #{op,jdbcType=VARCHAR},
+            </if>
+            <if test="isSuccess != null">
+                is_success = #{isSuccess,jdbcType=BOOLEAN},
+            </if>
+            <if test="time != null">
+                `time` = #{time,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="ccu.iot.cloud.entity.OperationRecord">
+    update operation_record
+    set user_id = #{userId,jdbcType=INTEGER},
+      node_id = #{nodeId,jdbcType=INTEGER},
+      op = #{op,jdbcType=VARCHAR},
+      is_success = #{isSuccess,jdbcType=BOOLEAN},
+      `time` = #{time,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

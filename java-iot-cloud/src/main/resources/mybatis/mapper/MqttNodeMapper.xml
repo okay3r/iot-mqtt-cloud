@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ccu.iot.cloud.dao.MqttNodeDao">
+    <resultMap id="BaseResultMap" type="ccu.iot.cloud.entity.MqttNode">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="node_name" jdbcType="VARCHAR" property="nodeName"/>
+        <result column="node_remark" jdbcType="VARCHAR" property="nodeRemark"/>
+        <result column="node_create_time" jdbcType="DATE" property="nodeCreateTime"/>
+        <result column="node_update_time" jdbcType="DATE" property="nodeUpdateTime"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, node_name, node_remark, node_create_time, node_update_time
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from mqtt_node
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="selectBySelective" resultType="ccu.iot.cloud.entity.MqttNode">
+        select
+        <include refid="Base_Column_List"/>
+        from mqtt_node
+        <where>
+            <if test="nodeName != null">
+                and node_name = #{nodeName,jdbcType=VARCHAR}
+            </if>
+            <if test="nodeRemark != null">
+                and node_remark = #{nodeRemark,jdbcType=VARCHAR}
+            </if>
+            <if test="nodeCreateTime != null">
+                and node_create_time = #{nodeCreateTime,jdbcType=DATE}
+            </if>
+            <if test="nodeUpdateTime != null">
+                and node_update_time = #{nodeUpdateTime,jdbcType=DATE}
+            </if>
+        </where>
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from mqtt_node
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="ccu.iot.cloud.entity.MqttNode"
+            useGeneratedKeys="true">
+    insert into mqtt_node (node_name, node_remark, node_create_time, 
+      node_update_time)
+    values (#{nodeName,jdbcType=VARCHAR}, #{nodeRemark,jdbcType=VARCHAR}, #{nodeCreateTime,jdbcType=DATE}, 
+      #{nodeUpdateTime,jdbcType=DATE})
+  </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="ccu.iot.cloud.entity.MqttNode"
+            useGeneratedKeys="true">
+        insert into mqtt_node
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="nodeName != null">
+                node_name,
+            </if>
+            <if test="nodeRemark != null">
+                node_remark,
+            </if>
+            <if test="nodeCreateTime != null">
+                node_create_time,
+            </if>
+            <if test="nodeUpdateTime != null">
+                node_update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="nodeName != null">
+                #{nodeName,jdbcType=VARCHAR},
+            </if>
+            <if test="nodeRemark != null">
+                #{nodeRemark,jdbcType=VARCHAR},
+            </if>
+            <if test="nodeCreateTime != null">
+                #{nodeCreateTime,jdbcType=DATE},
+            </if>
+            <if test="nodeUpdateTime != null">
+                #{nodeUpdateTime,jdbcType=DATE},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="ccu.iot.cloud.entity.MqttNode">
+        update mqtt_node
+        <set>
+            <if test="nodeName != null">
+                node_name = #{nodeName,jdbcType=VARCHAR},
+            </if>
+            <if test="nodeRemark != null">
+                node_remark = #{nodeRemark,jdbcType=VARCHAR},
+            </if>
+            <if test="nodeCreateTime != null">
+                node_create_time = #{nodeCreateTime,jdbcType=DATE},
+            </if>
+            <if test="nodeUpdateTime != null">
+                node_update_time = #{nodeUpdateTime,jdbcType=DATE},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="ccu.iot.cloud.entity.MqttNode">
+    update mqtt_node
+    set node_name = #{nodeName,jdbcType=VARCHAR},
+      node_remark = #{nodeRemark,jdbcType=VARCHAR},
+      node_create_time = #{nodeCreateTime,jdbcType=DATE},
+      node_update_time = #{nodeUpdateTime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
