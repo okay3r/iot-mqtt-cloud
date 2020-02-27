@@ -8,9 +8,11 @@
     <result column="port" jdbcType="INTEGER" property="port" />
     <result column="qos" jdbcType="INTEGER" property="qos" />
   </resultMap>
+
   <sql id="Base_Column_List">
     id, topic, `host`, port, qos
   </sql>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -36,16 +38,19 @@
       </if>
     </where>
   </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from mqtt_topic
     where id = #{id,jdbcType=INTEGER}
   </delete>
+
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="ccu.iot.cloud.entity.MqttTopic" useGeneratedKeys="true">
     insert into mqtt_topic (topic, `host`, port, 
       qos)
     values (#{topic,jdbcType=VARCHAR}, #{host,jdbcType=VARCHAR}, #{port,jdbcType=INTEGER}, 
       #{qos,jdbcType=INTEGER})
   </insert>
+
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="ccu.iot.cloud.entity.MqttTopic" useGeneratedKeys="true">
     insert into mqtt_topic
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -62,6 +67,7 @@
         qos,
       </if>
     </trim>
+
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="topic != null">
         #{topic,jdbcType=VARCHAR},
@@ -77,6 +83,7 @@
       </if>
     </trim>
   </insert>
+
   <update id="updateByPrimaryKeySelective" parameterType="ccu.iot.cloud.entity.MqttTopic">
     update mqtt_topic
     <set>
@@ -95,6 +102,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
+
   <update id="updateByPrimaryKey" parameterType="ccu.iot.cloud.entity.MqttTopic">
     update mqtt_topic
     set topic = #{topic,jdbcType=VARCHAR},
@@ -103,4 +111,5 @@
       qos = #{qos,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
 </mapper>
