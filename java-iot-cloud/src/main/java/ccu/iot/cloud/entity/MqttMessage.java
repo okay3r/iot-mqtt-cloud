@@ -1,5 +1,7 @@
 package ccu.iot.cloud.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import java.util.Date;
 
 public class MqttMessage {
@@ -7,6 +9,7 @@ public class MqttMessage {
     private String topic;
     private String msg;
     private Integer qos;
+    @JSONField(format="yyyy-MM-dd HH:mm:ss")
     private Date time;
 
     public MqttMessage() {

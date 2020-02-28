@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
+@PropertySource("classpath:properties/rabbit.properties")
 public class TopicRabbitConfig {
 
     @Value("${iot.rabbit.exchange}")

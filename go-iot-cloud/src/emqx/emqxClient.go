@@ -6,9 +6,16 @@ import (
 	"log"
 )
 
+type MqttInformation struct {
+	Topic string
+	Msg   string
+	Qos   int
+	Time  string
+}
+
 /*
 	订阅所有配置文件中的主题
- */
+*/
 func DoSubEmqx(client *MQTT.Client) {
 	count := len(c.GlobalInfo.EmqxTopic.TopicList)
 	for i := 0; i < count; i++ {
@@ -32,5 +39,5 @@ func DoSubscribe(client *MQTT.Client, topic string, qos byte) {
 //mqtt监听到消息后的回调函数
 func MsgReceivedHandler(client MQTT.Client, message MQTT.Message) {
 	//异步对新消息进行处理
-	go HandleMsgFromEmqx(client,message)
+	go HandleMsgFromEmqx(client, message)
 }

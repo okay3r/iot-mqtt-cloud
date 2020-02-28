@@ -8,7 +8,7 @@ import (
 )
 
 //将消息发送到rabbit中
-func Publish(channel *amqp.Channel, topic string, msg []byte) {
+func Publish(channel *amqp.Channel, topic string, informationJson []byte) {
 	basicKey := config.GlobalInfo.RabbitPublish.BasicKey
 	//拼接topic
 	pubTopic := basicKey + topic
@@ -22,10 +22,10 @@ func Publish(channel *amqp.Channel, topic string, msg []byte) {
 		publishInfo.Immediate,
 		amqp.Publishing{
 			ContentType: publishInfo.ContentType,
-			Body:        msg,
+			Body:        informationJson,
 		},
 	)
 	utils.FailOnError("publish error", err)
 	//发送成功，记录日志
-	log.Printf("transfer to rabbit [%s] : [%s]", pubTopic, string(msg))
+	log.Printf("transfer to rabbit [%s] : [%s]", pubTopic, string(informationJson))
 }

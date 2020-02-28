@@ -25,6 +25,17 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--aop支持-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+
         <!--mybatis支持-->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>

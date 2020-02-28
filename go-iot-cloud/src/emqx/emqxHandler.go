@@ -1,25 +1,37 @@
 package emqx
 
 import (
+	"encoding/json"
 	MQTT "github.com/eclipse/paho.mqtt.golang"
 	"github.com/streadway/amqp"
 	"go-iot-cloud/src/rabbit"
+	"go-iot-cloud/src/utils"
 	"log"
 	"strings"
+	"time"
 )
 
 var Channel *amqp.Channel
 
 func HandleMsgFromEmqx(client MQTT.Client, message MQTT.Message) {
-	topic := message.Topic()
-	msg := message.Payload()
-	qos := message.Qos()
+	time := time.Now().Format("2006-1-2 15:04:05")
+	mqttInfo := MqttInformation{
+		Topic: message.Topic(),
+		Msg:   string(message.Payload()),
+		Qos:   int(message.Qos()),
+		Time:  time,
+	}
+
 	//记录日志
-	log.Printf("Receive - [topic: %s]  [Message: %s]  [QoS: %d]\n", topic, msg, qos)
+	log.Printf("Receive - [topic: %s]  [Message: %s]  [QoS: %d]\n", mqttInfo.Topic, mqttInfo.Msg, mqttInfo.Qos)
 	//格式化主题字符串
-	useTopic := formatTopic(topic)
+	useTopic := formatTopic(mqttInfo.Topic)
+
+	informationJson, err := json.Marshal(mqttInfo)
+	utils.FailOnError("failed format to json", err)
+
 	//发布到rabbit中
-	rabbit.Publish(Channel, useTopic, msg)
+	go rabbit.Publish(Channel, useTopic, informationJson)
 }
 
 func formatTopic(topic string) string {

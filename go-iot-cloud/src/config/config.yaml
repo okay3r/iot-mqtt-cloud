@@ -5,7 +5,7 @@ emqx:
   clientId: ok-test1
   topic:
     topicList: test/#
-    qosList: 0
+    qosList: 2
 
 rabbitmq:
   address: 127.0.0.1:5672

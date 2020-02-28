@@ -3,10 +3,10 @@ spring:
     include: db,redis,web,mq
 
 # 设计日志级别
-logging:
-  level:
+#logging:
+#  level:
     # 此处是为了mybatis log plugin
-    ccu.iot.cloud.dao: debug
+#    ccu.iot.cloud.dao: debug
 
 
 
