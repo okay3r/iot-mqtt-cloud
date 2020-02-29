@@ -6,6 +6,7 @@ import ccu.iot.cloud.service.MqttMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -19,4 +20,19 @@ public class MqttMessageServiceImpl implements MqttMessageService {
         MqttMessage mqttMessage = new MqttMessage();
         return this.mqttMessageDao.selectBySelective(mqttMessage);
     }
+
+    @Override
+    public List<MqttMessage> queryMqttMsgByTimeLimit(Date start, Date end) {
+        List<MqttMessage> mqttMessageList = this.mqttMessageDao.selectByTimeLimit(start, end);
+        return mqttMessageList;
+    }
+
+    @Override
+    public List<MqttMessage> queryMqttMsgByTopic(String topic) {
+        MqttMessage mqttMessage = new MqttMessage();
+        mqttMessage.setTopic(topic);
+        List<MqttMessage> mqttMessageList = this.mqttMessageDao.selectMsgByVague(topic);
+        return mqttMessageList;
+    }
+
 }

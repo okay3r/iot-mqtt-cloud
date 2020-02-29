@@ -25,6 +25,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    /***
+     * 用户登录
+     * @param user
+     * @return
+     */
     @PostMapping("/signIn")
     public Result<SignInAck> signIn(User user) {
         // logger.info("signIn # " + user);
@@ -38,6 +43,11 @@ public class UserController {
         return result;
     }
 
+    /***
+     * 用户注册
+     * @param user
+     * @return
+     */
     @PostMapping("/signUp")
     public Result<?> signUp(User user) {
         // logger.info("signUp # " + user);

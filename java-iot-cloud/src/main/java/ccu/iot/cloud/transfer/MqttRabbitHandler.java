@@ -24,7 +24,7 @@ public class MqttRabbitHandler {
         if (lines != 0) {
             logger.info("rabbit # store # " + mqttMessage);
         } else {
-            logger.error("rabbit # store # error" + mqttMessage);
+            logger.error("rabbit # store # error # " + mqttMessage);
         }
 
     }

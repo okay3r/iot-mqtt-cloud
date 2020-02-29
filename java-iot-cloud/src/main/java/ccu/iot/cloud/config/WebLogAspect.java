@@ -28,19 +28,15 @@ public class WebLogAspect {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
 
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("[URL : " + request.getRequestURL().toString() + "] * ");
-        stringBuilder.append("[METHOD : " + request.getMethod() + "] * ");
-        stringBuilder.append("[IP : " + request.getRemoteAddr() + "] * ");
-        stringBuilder.append("[CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName() + "] * ");
-        stringBuilder.append("[ARGS : " + Arrays.toString(joinPoint.getArgs()) + "]");
-        logger.info(stringBuilder.toString());
-        // 记录下请求内容
-        // logger.info("URL : " + request.getRequestURL().toString());
-        // logger.info("HTTP_METHOD : " + request.getMethod());
-        // logger.info("IP : " + request.getRemoteAddr());
-        // logger.info("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
-        // logger.info("ARGS : " + Arrays.toString(joinPoint.getArgs()));
+        StringBuilder sb = new StringBuilder();
+        sb.append("REQUEST :  ");
+        sb.append(request.getMethod() + " @ ");
+        sb.append(request.getRequestURL().toString());
+        sb.append(" [" + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName() +
+                "] ");
+        sb.append("[ARGS : " + Arrays.toString(joinPoint.getArgs()) + "]");
+        sb.append("[IP : " + request.getRemoteAddr() + "] * ");
+        logger.info(sb.toString());
 
     }
 

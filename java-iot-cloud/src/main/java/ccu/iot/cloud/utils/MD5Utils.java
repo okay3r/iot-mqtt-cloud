@@ -4,14 +4,6 @@ import ccu.iot.cloud.entity.User;
 
 public class MD5Utils {
 
-    public static void main(String[] args) {
-        String username = "sjkllll";
-        String password1 = "18892929999";
-        String password2 = "18892929999";
-        System.out.println(getMD5(username + password1));
-        System.out.println(getMD5(username + password2));
-    }
-
     public static String getMD5(String source) {
         return getMD5(source.getBytes());
     }

@@ -27,9 +27,7 @@ public class LoginInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String cacheKey = request.getParameter("cacheKey");
         String secretKey = request.getParameter("secretKey");
-        String start = request.getParameter("start");
-        String end = request.getParameter("end");
-        logger.info("check signIn # " + cacheKey + " : " + secretKey);
+        logger.info("Intercept Request token # " + cacheKey + " = " + secretKey);
         String trueKey = (String) redisUtils.get(cacheKey);
         if (!StringUtils.isEmpty(trueKey) && trueKey.equals(secretKey)) {
             this.redisUtils.expire(cacheKey, 1800);
@@ -43,12 +41,12 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        logger.info("postHandle execute...");
+        // logger.info("postHandle execute...");
     }
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        logger.info("afterCompletion execute...");
+        // logger.info("afterCompletion execute...");
 
     }
 }
