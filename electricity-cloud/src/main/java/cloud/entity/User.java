@@ -1,29 +1,43 @@
 package cloud.entity;
 
-
-
-import top.okay3r.ssm.enums.UserSexEnum;
-
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * user
+ * @author 
+ */
 public class User implements Serializable {
-    private static final long serialVersionUID = -5177973407082925318L;
-    private Long id;
+    private Integer id;
+
     private String username;
-    private Date birthday;
-    private UserSexEnum sex;
-    private String address;
+
+    private String password;
+
+    private String email;
+
+    private String phone;
+
+    private String remark;
+
+    private Date createTime;
+
+    private Date updateTime;
+
+    private static final long serialVersionUID = 1L;
 
     public User() {
     }
 
-    public User(Long id, String username, Date birthday, UserSexEnum sex, String address) {
+    public User(Integer id, String username, String password, String email, String phone, String remark, Date createTime, Date updateTime) {
         this.id = id;
         this.username = username;
-        this.birthday = birthday;
-        this.sex = sex;
-        this.address = address;
+        this.password = password;
+        this.email = email;
+        this.phone = phone;
+        this.remark = remark;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
     }
 
     @Override
@@ -31,17 +45,20 @@ public class User implements Serializable {
         return "User{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
-                ", birthday=" + birthday +
-                ", sex=" + sex +
-                ", address='" + address + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", remark='" + remark + '\'' +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
                 '}';
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -53,27 +70,55 @@ public class User implements Serializable {
         this.username = username;
     }
 
-    public Date getBirthday() {
-        return birthday;
+    public String getPassword() {
+        return password;
     }
 
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public UserSexEnum getSex() {
-        return sex;
+    public String getEmail() {
+        return email;
     }
 
-    public void setSex(UserSexEnum sex) {
-        this.sex = sex;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getAddress() {
-        return address;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 }

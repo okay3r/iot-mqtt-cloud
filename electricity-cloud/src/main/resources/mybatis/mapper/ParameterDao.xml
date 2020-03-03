@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cloud.dao.ParameterDao">
+  <resultMap id="BaseResultMap" type="cloud.entity.Parameter">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="parameter_name" jdbcType="VARCHAR" property="parameterName" />
+    <result column="parameter_unit" jdbcType="VARCHAR" property="parameterUnit" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, `parameter_name`, parameter_unit
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from parameter
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from parameter
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cloud.entity.Parameter" useGeneratedKeys="true">
+    insert into parameter (`parameter_name`, parameter_unit)
+    values (#{parameterName,jdbcType=VARCHAR}, #{parameterUnit,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cloud.entity.Parameter" useGeneratedKeys="true">
+    insert into parameter
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="parameterName != null">
+        `parameter_name`,
+      </if>
+      <if test="parameterUnit != null">
+        parameter_unit,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="parameterName != null">
+        #{parameterName,jdbcType=VARCHAR},
+      </if>
+      <if test="parameterUnit != null">
+        #{parameterUnit,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cloud.entity.Parameter">
+    update parameter
+    <set>
+      <if test="parameterName != null">
+        `parameter_name` = #{parameterName,jdbcType=VARCHAR},
+      </if>
+      <if test="parameterUnit != null">
+        parameter_unit = #{parameterUnit,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cloud.entity.Parameter">
+    update parameter
+    set `parameter_name` = #{parameterName,jdbcType=VARCHAR},
+      parameter_unit = #{parameterUnit,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

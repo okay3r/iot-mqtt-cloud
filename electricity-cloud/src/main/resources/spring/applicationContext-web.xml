@@ -3,16 +3,23 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <aop:aspectj-autoproxy/>
 
     <!-- 配置处理器Bean的读取 -->
     <!-- 扫描controller注解,多个包中间使用半角逗号分隔 -->
-    <context:component-scan base-package="top.okay3r.ssm.controller"/>
+    <context:component-scan base-package="cloud.controller"/>
 
     <!-- 配置三大组件之处理器适配器和处理器映射器 -->
     <!-- 内置了RequestMappingHandlerMapping和RequestMappingHandlerAdapter等组件注册-->
@@ -27,7 +34,14 @@
     </bean>
 
     <!--文件上传-->
-    <bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="maxUploadSize" value="102400000"></property>
     </bean>
+    
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/user/**"/>
+            <bean class="cloud.interceptor.SignInInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
