@@ -44,4 +44,6 @@
             <bean class="cloud.interceptor.SignInInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
+
+    <mvc:default-servlet-handler/>
 </beans>
