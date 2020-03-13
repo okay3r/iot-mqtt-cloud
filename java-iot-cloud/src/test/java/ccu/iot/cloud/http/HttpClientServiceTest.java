@@ -21,11 +21,11 @@ public class HttpClientServiceTest {
 
     @Test
     public void doGet() throws Exception {
-        String key = Base64.getEncoder().encodeToString(("f41f3756310c8" + ":" + "MjkxODIwMDMxNDgzMDAwNDUyNDM3MDQzMTAyNjM1MTMwODI").getBytes());
+        String key = Base64.getEncoder().encodeToString(("9aadf24172aed" + ":" + "MjkyMTk2OTM4MjQzMTE3MzM3ODExNDAyODQ3NjYwMjc3NzG").getBytes());
         key = "Basic " + key;
         Map<String, String> headers = new HashMap<>();
         headers.put("Authorization", key);
-        String url = "http://47.93.10.179:8080/api/v3/nodes/emqx@127.0.0.1/subscriptions/?_page=1&_limit=10000";
+        String url = "http://47.93.10.179:8080/api/v3";
         String res = httpClientService.doGet(url, null, headers);
         System.out.println(res);
     }
