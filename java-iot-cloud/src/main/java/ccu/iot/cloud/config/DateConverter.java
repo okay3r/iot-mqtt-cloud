@@ -7,6 +7,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/***
+ * 日期转换
+ */
 @Component
 public class DateConverter implements Converter<String, Date> {
     @Override

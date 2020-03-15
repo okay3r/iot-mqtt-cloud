@@ -1,14 +1,12 @@
 package ccu.iot.cloud.controller;
 
 
-import ccu.iot.cloud.result.BoolResult;
-import ccu.iot.cloud.result.SignInAck;
-import ccu.iot.cloud.result.Result;
 import ccu.iot.cloud.entity.User;
+import ccu.iot.cloud.result.BoolResult;
+import ccu.iot.cloud.result.Result;
+import ccu.iot.cloud.result.SignInAck;
 import ccu.iot.cloud.service.UserService;
 import ccu.iot.cloud.utils.UserUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,8 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-
-    // private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private UserService userService;

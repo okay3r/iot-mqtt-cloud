@@ -1,5 +1,6 @@
 package ccu.iot.cloud.http;
 
+import com.alibaba.fastjson.JSON;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -7,12 +8,14 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -92,27 +95,34 @@ public class HttpClientService {
      * 带参数的post请求
      *
      * @param url
-     * @param map
+     * @param paramMap
      * @return
      * @throws Exception
      */
-    public HttpResult doPost(String url, Map<String, Object> map) throws Exception {
+    public HttpResult doPost(String url, Map<String, Object> paramMap, Map<String, String> headerMap) throws Exception {
         // 声明httpPost请求
         HttpPost httpPost = new HttpPost(url);
         // 加入配置信息
         httpPost.setConfig(config);
 
+        if (headerMap != null) {
+            for (Map.Entry<String, String> headerEntry : headerMap.entrySet()) {
+                httpPost.addHeader(headerEntry.getKey(), headerEntry.getValue());
+            }
+        }
+
         // 判断map是否为空，不为空则进行遍历，封装from表单对象
-        if (map != null) {
+        if (paramMap != null) {
             List<NameValuePair> list = new ArrayList<NameValuePair>();
-            for (Map.Entry<String, Object> entry : map.entrySet()) {
+            for (Map.Entry<String, Object> entry : paramMap.entrySet()) {
                 list.add(new BasicNameValuePair(entry.getKey(), entry.getValue().toString()));
             }
             // 构造from表单对象
             UrlEncodedFormEntity urlEncodedFormEntity = new UrlEncodedFormEntity(list, "UTF-8");
 
             // 把表单放到post里
-            httpPost.setEntity(urlEncodedFormEntity);
+            // httpPost.setEntity(urlEncodedFormEntity);
+            httpPost.setEntity(new StringEntity(JSON.toJSONString(paramMap), Charset.forName("UTF-8")));
         }
 
         // 发起请求
@@ -129,6 +139,6 @@ public class HttpClientService {
      * @throws Exception
      */
     public HttpResult doPost(String url) throws Exception {
-        return this.doPost(url, null);
+        return this.doPost(url, null, null);
     }
 }

@@ -10,6 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /***
  * springmvc组件配置类
+ * 配置登录拦截器
  */
 
 @Configuration
@@ -24,7 +25,7 @@ public class MySpringMvcConfig implements WebMvcConfigurer {
         //需要拦截的请求
         interceptorRegistration.addPathPatterns("/**");
         //不需要拦截的请求
-        // interceptorRegistration.excludePathPatterns("/", "/index.html", "/login", "/css/**", "/img/**", "/js/**");
+        interceptorRegistration.excludePathPatterns("/", "/index.html", "/login", "/css/**", "/img/**", "/js/**");
         interceptorRegistration.excludePathPatterns("/user/**","/user/signUp");
     }
 

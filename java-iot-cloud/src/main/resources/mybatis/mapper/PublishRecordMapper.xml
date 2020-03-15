@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ccu.iot.cloud.dao.PublishRecordDao">
+    <resultMap id="BaseResultMap" type="ccu.iot.cloud.entity.PublishRecord">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="topic" jdbcType="VARCHAR" property="topic"/>
+        <result column="payload" jdbcType="VARCHAR" property="payload"/>
+        <result column="is_success" jdbcType="BOOLEAN" property="isSuccess"/>
+        <result column="qos" jdbcType="INTEGER" property="qos"/>
+        <result column="time" jdbcType="TIMESTAMP" property="time"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, username, topic, payload, is_success, qos, `time`
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from publish_record
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <select id="selectBySelective" resultType="ccu.iot.cloud.entity.PublishRecord">
+        select
+        <include refid="Base_Column_List"/>
+        from publish_record
+        <where>
+            <if test="username != null">
+                and username = #{username,jdbcType=VARCHAR}
+            </if>
+            <if test="topic != null">
+                and topic = #{topic,jdbcType=VARCHAR}
+            </if>
+            <if test="payload != null">
+                and payload = #{payload,jdbcType=VARCHAR}
+            </if>
+            <if test="isSuccess != null">
+                and is_success = #{isSuccess,jdbcType=BOOLEAN}
+            </if>
+            <if test="qos != null">
+                and qos = #{qos,jdbcType=INTEGER}
+            </if>
+            <if test="time != null">
+                and `time` = #{time,jdbcType=TIMESTAMP}
+            </if>
+        </where>
+    </select>
+    <select id="selectByTimeLimit" resultType="ccu.iot.cloud.entity.PublishRecord">
+        select
+        <include refid="Base_Column_List"/>
+        from publish_record
+        where
+        `time` between #{start} and #{end}
+    </select>
+    <select id="selectPubByVague" parameterType="string" resultType="ccu.iot.cloud.entity.PublishRecord">
+        select
+        <include refid="Base_Column_List"/>
+        from publish_record
+        where topic like CONCAT(#{topic}, '%')
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from publish_record
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="ccu.iot.cloud.entity.PublishRecord"
+            useGeneratedKeys="true">
+    insert into publish_record (username, topic, payload, 
+      is_success, qos, `time`
+      )
+    values (#{username,jdbcType=VARCHAR}, #{topic,jdbcType=VARCHAR}, #{payload,jdbcType=VARCHAR}, 
+      #{isSuccess,jdbcType=BOOLEAN}, #{qos,jdbcType=INTEGER}, #{time,jdbcType=TIMESTAMP}
+      )
+  </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="ccu.iot.cloud.entity.PublishRecord"
+            useGeneratedKeys="true">
+        insert into publish_record
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="username != null">
+                username,
+            </if>
+            <if test="topic != null">
+                topic,
+            </if>
+            <if test="payload != null">
+                payload,
+            </if>
+            <if test="isSuccess != null">
+                is_success,
+            </if>
+            <if test="qos != null">
+                qos,
+            </if>
+            <if test="time != null">
+                `time`,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="username != null">
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="topic != null">
+                #{topic,jdbcType=VARCHAR},
+            </if>
+            <if test="payload != null">
+                #{payload,jdbcType=VARCHAR},
+            </if>
+            <if test="isSuccess != null">
+                #{isSuccess,jdbcType=BOOLEAN},
+            </if>
+            <if test="qos != null">
+                #{qos,jdbcType=INTEGER},
+            </if>
+            <if test="time != null">
+                #{time,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="ccu.iot.cloud.entity.PublishRecord">
+        update publish_record
+        <set>
+            <if test="username != null">
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="topic != null">
+                topic = #{topic,jdbcType=VARCHAR},
+            </if>
+            <if test="payload != null">
+                payload = #{payload,jdbcType=VARCHAR},
+            </if>
+            <if test="isSuccess != null">
+                is_success = #{isSuccess,jdbcType=BOOLEAN},
+            </if>
+            <if test="qos != null">
+                qos = #{qos,jdbcType=INTEGER},
+            </if>
+            <if test="time != null">
+                `time` = #{time,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="ccu.iot.cloud.entity.PublishRecord">
+    update publish_record
+    set username = #{username,jdbcType=VARCHAR},
+      topic = #{topic,jdbcType=VARCHAR},
+      payload = #{payload,jdbcType=VARCHAR},
+      is_success = #{isSuccess,jdbcType=BOOLEAN},
+      qos = #{qos,jdbcType=INTEGER},
+      `time` = #{time,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -16,19 +16,19 @@ public class MqttMessageServiceImpl implements MqttMessageService {
     private MqttMessageDao mqttMessageDao;
 
     @Override
-    public List<MqttMessage> queryMqttMsgHistory() {
+    public List<MqttMessage> queryAll() {
         MqttMessage mqttMessage = new MqttMessage();
         return this.mqttMessageDao.selectBySelective(mqttMessage);
     }
 
     @Override
-    public List<MqttMessage> queryMqttMsgByTimeLimit(Date start, Date end) {
+    public List<MqttMessage> queryByTime(Date start, Date end) {
         List<MqttMessage> mqttMessageList = this.mqttMessageDao.selectByTimeLimit(start, end);
         return mqttMessageList;
     }
 
     @Override
-    public List<MqttMessage> queryMqttMsgByTopic(String topic) {
+    public List<MqttMessage> queryByTopic(String topic) {
         MqttMessage mqttMessage = new MqttMessage();
         mqttMessage.setTopic(topic);
         List<MqttMessage> mqttMessageList = this.mqttMessageDao.selectMsgByVague(topic);

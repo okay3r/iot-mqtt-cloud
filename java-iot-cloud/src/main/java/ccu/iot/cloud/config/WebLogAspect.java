@@ -14,6 +14,9 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 
+/***
+ * AOP记录请求、响应日志
+ */
 @Component
 @Aspect
 public class WebLogAspect {
@@ -35,7 +38,7 @@ public class WebLogAspect {
         sb.append(" [" + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName() +
                 "] ");
         sb.append("[ARGS : " + Arrays.toString(joinPoint.getArgs()) + "]");
-        sb.append("[IP : " + request.getRemoteAddr() + "] * ");
+        // sb.append("[IP : " + request.getRemoteAddr() + "] * ");
         logger.info(sb.toString());
 
     }

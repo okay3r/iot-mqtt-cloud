@@ -6,9 +6,9 @@ import java.util.Date;
 import java.util.List;
 
 public interface MqttMessageService {
-    List<MqttMessage> queryMqttMsgHistory();
+    List<MqttMessage> queryAll();
 
-    List<MqttMessage> queryMqttMsgByTimeLimit(Date start, Date end);
+    List<MqttMessage> queryByTime(Date start, Date end);
 
-    List<MqttMessage> queryMqttMsgByTopic(String topic);
+    List<MqttMessage> queryByTopic(String topic);
 }

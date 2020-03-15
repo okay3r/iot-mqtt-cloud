@@ -24,8 +24,8 @@ public class MqttMessageController {
      * @return
      */
     @GetMapping("/queryAll")
-    public Result<List<MqttMessage>> queryMqttMsg() {
-        List<MqttMessage> messageList = this.mqttMessageService.queryMqttMsgHistory();
+    public Result<List<MqttMessage>> queryAll() {
+        List<MqttMessage> messageList = this.mqttMessageService.queryAll();
         return new Result<List<MqttMessage>>(HttpStatus.OK.value(), "query success", messageList);
     }
 
@@ -36,10 +36,10 @@ public class MqttMessageController {
      * @return
      */
     @GetMapping("/queryByTime")
-    public Result<List<MqttMessage>> queryMqttMsgByTimeLimit(
+    public Result<List<MqttMessage>> queryByTime(
             Date start,
             Date end) {
-        List<MqttMessage> mqttMessageList = this.mqttMessageService.queryMqttMsgByTimeLimit(start, end);
+        List<MqttMessage> mqttMessageList = this.mqttMessageService.queryByTime(start, end);
         return new Result<>(HttpStatus.OK.value(), "query success", mqttMessageList);
     }
 
@@ -49,8 +49,8 @@ public class MqttMessageController {
      * @return
      */
     @GetMapping("/queryByTopic")
-    public Result<List<MqttMessage>> queryMqttMsgByTopic(String topic) {
-        List<MqttMessage> mqttMessageList = this.mqttMessageService.queryMqttMsgByTopic(topic);
+    public Result<List<MqttMessage>> queryByTopic(String topic) {
+        List<MqttMessage> mqttMessageList = this.mqttMessageService.queryByTopic(topic);
         if (mqttMessageList != null) {
             return new Result<>(HttpStatus.OK.value(), "query success", mqttMessageList);
         }

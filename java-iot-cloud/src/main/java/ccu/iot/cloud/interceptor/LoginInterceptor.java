@@ -25,7 +25,8 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        String cacheKey = request.getParameter("cacheKey");
+        return true;
+       /* String cacheKey = request.getParameter("cacheKey");
         String secretKey = request.getParameter("secretKey");
         logger.info("Intercept Request token # " + cacheKey + " = " + secretKey);
         String trueKey = (String) redisUtils.get(cacheKey);
@@ -36,7 +37,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         Result<String> result = new Result<>(HttpStatus.BAD_REQUEST.value(), "Please login", null);
         String json = JSON.toJSONString(result);
         response.getWriter().write(json);
-        return false;
+        return false;*/
     }
 
     @Override
