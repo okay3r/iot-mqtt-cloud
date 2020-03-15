@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
+ * 设备
  * device
  * @author 
  */
@@ -12,10 +13,13 @@ public class Device implements Serializable {
 
     private String deviceName;
 
+    //所属类别的id
     private Integer categoryId;
 
+    //所属用户的id
     private Integer userId;
 
+    //是否开启
     private Boolean using;
 
     private Date createTime;

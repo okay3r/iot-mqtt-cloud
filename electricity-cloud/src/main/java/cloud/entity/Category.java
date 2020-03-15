@@ -3,6 +3,7 @@ package cloud.entity;
 import java.io.Serializable;
 
 /**
+ * 设备类别
  * category
  * @author 
  */

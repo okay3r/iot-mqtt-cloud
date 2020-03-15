@@ -3,6 +3,7 @@ package cloud.entity;
 import java.io.Serializable;
 
 /**
+ * 报警值
  * alarm
  * @author 
  */
@@ -13,8 +14,10 @@ public class Alarm implements Serializable {
 
     private Integer parameterId;
 
+    //上限
     private Integer up;
 
+    //下限
     private Integer down;
 
     private static final long serialVersionUID = 1L;

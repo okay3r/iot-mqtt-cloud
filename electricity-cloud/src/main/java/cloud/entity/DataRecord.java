@@ -4,16 +4,19 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
+ * 数据记录
  * data_record
  * @author 
  */
 public class DataRecord implements Serializable {
     private Integer id;
 
+    //所属设备的id
     private Integer deviceId;
 
     private Integer value;
 
+    //该数据的类型的id
     private Integer parameterId;
 
     private Date time;
