@@ -7,10 +7,10 @@ import (
 )
 
 type MqttInformation struct {
-	Topic string
-	Msg   string
-	Qos   int
-	Time  string
+	Topic   string
+	Payload string
+	Qos     int
+	Time    string
 }
 
 /*

@@ -1,6 +1,7 @@
-package ccu.iot.cloud.dao;
+package ccu.iot.cloud.mapper;
 
 import ccu.iot.cloud.entity.User;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,14 +10,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class UserDaoTest {
 
     @Autowired
-    private UserDao userDao;
+    private UserMapper userMapper;
 
     @Test
     public void deleteByPrimaryKey() {
@@ -32,7 +31,7 @@ public class UserDaoTest {
 
     @Test
     public void selectByPrimaryKey() {
-        User user = this.userDao.selectByPrimaryKey(2);
+        User user = this.userMapper.selectById(2);
         System.out.println(user);
     }
 
@@ -50,7 +49,7 @@ public class UserDaoTest {
         user.setUsername("mike");
         user.setPassword("123123");
         user.setEmail("123123@qq.com");
-        List<User> users = this.userDao.selectBySelective(user);
+        List<User> users = this.userMapper.selectList(new QueryWrapper<>(user));
         for (User user1 : users) {
             System.out.println(user1);
         }

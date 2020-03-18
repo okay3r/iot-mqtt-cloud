@@ -1,6 +1,6 @@
 package ccu.iot.cloud.controller;
 
-import ccu.iot.cloud.entity.mqttapi.CurrentMqttSub;
+import ccu.iot.cloud.entity.ClientTopicInfo;
 import ccu.iot.cloud.entity.mqttapi.PublishEntity;
 import ccu.iot.cloud.result.Result;
 import ccu.iot.cloud.service.MqttApiService;
@@ -25,16 +25,16 @@ public class MqttApiController {
      * @throws Exception
      */
     @GetMapping("/subscriptions")
-    public Result<List<CurrentMqttSub>> queryCurrentSubscriptions() throws Exception {
-        List<CurrentMqttSub> currentMqttSubs = this.mqttApiService.queryCurrentSubscriptions();
-        if (currentMqttSubs.size() > 0) {
-            return new Result<>(200, "success", currentMqttSubs);
+    public Result<List<ClientTopicInfo>> queryCurrentSubscriptions() throws Exception {
+        List<ClientTopicInfo> clientTopicInfos = this.mqttApiService.queryCurrentSubscriptions();
+        if (clientTopicInfos.size() > 0) {
+            return new Result<>(200, "success", clientTopicInfos);
         }
         return new Result<>(400, "failed to query subscriptions", null);
     }
 
     /***
-     * 像指定主题发送信息
+     * 向指定主题发送信息
      * @param cacheKey
      * @param publishEntity
      * @return

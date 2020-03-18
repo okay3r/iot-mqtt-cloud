@@ -1,5 +1,6 @@
-package ccu.iot.cloud.transfer;
+package ccu.iot.cloud.rabbitmq;
 
+import ccu.iot.cloud.async.AsyncMqttSubTransferHandler;
 import com.rabbitmq.client.Channel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +16,7 @@ import java.util.Map;
 public class MqttRabbitConsumer {
 
     @Autowired
-    private MqttRabbitHandler mqttRabbitHandler;
+    private AsyncMqttSubTransferHandler asyncMqttSubTransferHandler;
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -25,6 +26,6 @@ public class MqttRabbitConsumer {
                         Channel channel) {
         logger.info("mqtt receive # " + informationJson);
 
-        this.mqttRabbitHandler.handleMsg(informationJson);
+        this.asyncMqttSubTransferHandler.handleMsg(informationJson);
     }
 }

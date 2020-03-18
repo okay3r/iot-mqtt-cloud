@@ -1,8 +1,8 @@
 package ccu.iot.cloud.controller;
 
-import ccu.iot.cloud.entity.MqttMessage;
+import ccu.iot.cloud.entity.MqttSub;
 import ccu.iot.cloud.result.Result;
-import ccu.iot.cloud.service.MqttMessageService;
+import ccu.iot.cloud.service.MqttSubService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,16 +17,16 @@ import java.util.List;
 public class MqttMessageController {
 
     @Autowired
-    private MqttMessageService mqttMessageService;
+    private MqttSubService mqttSubService;
 
     /***
      * 查询全部消息记录
      * @return
      */
     @GetMapping("/queryAll")
-    public Result<List<MqttMessage>> queryAll() {
-        List<MqttMessage> messageList = this.mqttMessageService.queryAll();
-        return new Result<List<MqttMessage>>(HttpStatus.OK.value(), "query success", messageList);
+    public Result<List<MqttSub>> queryAll() {
+        List<MqttSub> messageList = this.mqttSubService.queryAll();
+        return new Result<>(HttpStatus.OK.value(), "query success", messageList);
     }
 
     /***
@@ -36,10 +36,10 @@ public class MqttMessageController {
      * @return
      */
     @GetMapping("/queryByTime")
-    public Result<List<MqttMessage>> queryByTime(
+    public Result<List<MqttSub>> queryByTime(
             Date start,
             Date end) {
-        List<MqttMessage> mqttMessageList = this.mqttMessageService.queryByTime(start, end);
+        List<MqttSub> mqttMessageList = this.mqttSubService.queryByTime(start, end);
         return new Result<>(HttpStatus.OK.value(), "query success", mqttMessageList);
     }
 
@@ -49,8 +49,8 @@ public class MqttMessageController {
      * @return
      */
     @GetMapping("/queryByTopic")
-    public Result<List<MqttMessage>> queryByTopic(String topic) {
-        List<MqttMessage> mqttMessageList = this.mqttMessageService.queryByTopic(topic);
+    public Result<List<MqttSub>> queryByTopic(String topic) {
+        List<MqttSub> mqttMessageList = this.mqttSubService.queryByTopic(topic);
         if (mqttMessageList != null) {
             return new Result<>(HttpStatus.OK.value(), "query success", mqttMessageList);
         }

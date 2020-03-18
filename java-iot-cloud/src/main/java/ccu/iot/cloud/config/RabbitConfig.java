@@ -13,7 +13,6 @@ import org.springframework.context.annotation.PropertySource;
  * rabbitMQ配置
  */
 @Configuration
-@PropertySource("classpath:properties/rabbit.properties")
 public class RabbitConfig {
 
     @Value("${iot.rabbit.exchange}")

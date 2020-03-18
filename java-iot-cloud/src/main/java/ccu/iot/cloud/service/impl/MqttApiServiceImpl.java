@@ -1,11 +1,11 @@
 package ccu.iot.cloud.service.impl;
 
-import ccu.iot.cloud.dao.PublishRecordDao;
-import ccu.iot.cloud.entity.PublishRecord;
-import ccu.iot.cloud.entity.mqttapi.CurrentMqttSub;
+import ccu.iot.cloud.async.AsyncMqttInfoStoreHandler;
+import ccu.iot.cloud.entity.ClientTopicInfo;
 import ccu.iot.cloud.entity.mqttapi.PublishEntity;
 import ccu.iot.cloud.http.HttpClientService;
 import ccu.iot.cloud.http.HttpResult;
+import ccu.iot.cloud.redis.RedisUtils;
 import ccu.iot.cloud.service.MqttApiService;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -41,7 +41,16 @@ public class MqttApiServiceImpl implements MqttApiService {
     private String node;
 
     @Autowired
-    private PublishRecordDao publishRecordDao;
+    private AsyncMqttInfoStoreHandler asyncMqttInfoStoreHandler;
+
+    @Autowired
+    private RedisUtils redisUtils;
+
+    @Value("${redis.cli.info.name.key}")
+    private String cliInfoNameKey;
+
+    @Value("${redis.cli.info.remark.key}")
+    private String cliInfoRemarkKey;
 
     Map<String, String> headers = new HashMap<>();
 
@@ -56,13 +65,23 @@ public class MqttApiServiceImpl implements MqttApiService {
 
 
     @Override
-    public List<CurrentMqttSub> queryCurrentSubscriptions() throws Exception {
+    public List<ClientTopicInfo> queryCurrentSubscriptions() throws Exception {
         String url = baseUrl + "nodes/" + node + "/" + "subscriptions";
         String httpRes = this.httpClientService.doGet(url, null, headers);
         JSONObject jsonObject = JSON.parseObject(httpRes);
         String dataJson = jsonObject.getString("data");
-        List<CurrentMqttSub> currentMqttSubs = JSON.parseArray(dataJson, CurrentMqttSub.class);
-        return currentMqttSubs;
+
+        //从emqx获取到当前在线的client列表
+        List<ClientTopicInfo> clientTopicInfos = JSON.parseArray(dataJson, ClientTopicInfo.class);
+
+        for (ClientTopicInfo currentClient : clientTopicInfos) {
+            String cliName = (String) this.redisUtils.hget(cliInfoNameKey, currentClient.getClientId());
+            String cliRemark = (String) this.redisUtils.hget(cliInfoRemarkKey, currentClient.getClientId());
+            currentClient.setClientName(cliName);
+            currentClient.setRemark(cliRemark);
+        }
+        // this.asyncMqttInfoStoreHandler.storeCliInfo2Db(clientTopicInfos);
+        return clientTopicInfos;
     }
 
     @Override
@@ -83,17 +102,8 @@ public class MqttApiServiceImpl implements MqttApiService {
             e.printStackTrace();
         }
         Boolean success = httpResult != null && httpResult.getCode() == 200;
-
-        //TODO 抽离为异步存储到数据库
-        PublishRecord publishRecord = new PublishRecord();
-        publishRecord.setTopic(publishEntity.getTopic());
-        publishRecord.setPayload(publishEntity.getPayload());
-        publishRecord.setQos(publishEntity.getQos());
-        publishRecord.setIsSuccess(success);
-        publishRecord.setUsername(username);
-        publishRecord.setTime(new Date());
-        this.publishRecordDao.insert(publishRecord);
-
+        this.asyncMqttInfoStoreHandler.storePubInfo2Db(username, publishEntity, success);
         return success;
     }
+
 }

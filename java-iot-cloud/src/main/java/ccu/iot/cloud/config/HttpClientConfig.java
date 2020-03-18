@@ -14,7 +14,6 @@ import org.springframework.context.annotation.PropertySource;
  * httpClient配置
  */
 @Configuration
-@PropertySource("classpath:properties/http.properties")
 public class HttpClientConfig {
 
     @Value("${http.maxTotal}")

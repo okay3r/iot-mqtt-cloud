@@ -16,14 +16,14 @@ var Channel *amqp.Channel
 func HandleMsgFromEmqx(client MQTT.Client, message MQTT.Message) {
 	time := time.Now().Format("2006-1-2 15:04:05")
 	mqttInfo := MqttInformation{
-		Topic: message.Topic(),
-		Msg:   string(message.Payload()),
-		Qos:   int(message.Qos()),
-		Time:  time,
+		Topic:   message.Topic(),
+		Payload: string(message.Payload()),
+		Qos:     int(message.Qos()),
+		Time:    time,
 	}
 
 	//记录日志
-	log.Printf("Receive - [topic: %s]  [Message: %s]  [QoS: %d]\n", mqttInfo.Topic, mqttInfo.Msg, mqttInfo.Qos)
+	log.Printf("Receive - [topic: %s]  [Payload: %s]  [QoS: %d]\n", mqttInfo.Topic, mqttInfo.Payload, mqttInfo.Qos)
 	//格式化主题字符串
 	useTopic := formatTopic(mqttInfo.Topic)
 

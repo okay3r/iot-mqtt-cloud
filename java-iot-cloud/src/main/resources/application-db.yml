@@ -4,7 +4,7 @@ spring:
     username: root
     password: root
     #mysql8版本以上的驱动包，需要指定以下时区
-    url: jdbc:mysql://127.0.0.1:3306/iotcloud?characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://127.0.0.1:3306/iotc?characterEncoding=utf8&useSSL=false
     #mysql8版本以上指定新的驱动类
     driver-class-name: com.mysql.jdbc.Driver
 

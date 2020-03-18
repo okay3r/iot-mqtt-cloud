@@ -14,7 +14,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
  */
 @Configuration
 @EnableAsync
-public class ThreadPoolTaskConfig {
+public class MqttSubTransferThreadPoolTaskConfig {
 
 /**
  *   默认情况下，在创建了线程池后，线程池中的线程数为0，当有任务来之后，就会创建一个线程去执行任务，
