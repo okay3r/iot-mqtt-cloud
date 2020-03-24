@@ -1,8 +1,6 @@
-package cloud.dao;
+package cloud.mapper;
 
-import cloud.entity.Device;
 import cloud.entity.DeviceCategoryVo;
-import cloud.entity.User;
 import cloud.service.DeviceService;
 import org.junit.Test;
 import org.junit.runner.RunWith;

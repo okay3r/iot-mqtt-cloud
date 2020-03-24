@@ -1,6 +1,5 @@
 package cloud.controller;
 
-import cloud.dao.UserDao;
 import cloud.entity.User;
 import cloud.result.Result;
 import cloud.result.SignInAck;
@@ -18,6 +17,12 @@ public class UserController {
     @PostMapping("/signIn")
     public Result<SignInAck> signIn(String username, String password) {
         Result<SignInAck> result = this.userService.signIn(username, password);
+        return result;
+    }
+
+    @PostMapping("signUp")
+    public Result<SignInAck> signUp(User user) {
+        Result<SignInAck> result = this.userService.signUp(user);
         return result;
     }
 }
