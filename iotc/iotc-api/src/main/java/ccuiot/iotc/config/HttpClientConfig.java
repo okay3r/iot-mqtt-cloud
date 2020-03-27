@@ -30,7 +30,7 @@ public class HttpClientConfig {
     @Value("${http.socketTimeout}")
     private Integer socketTimeout;
 
-    @Value("${http.staleConnectionCheckEnabled}")
+    @Value(" ${http.staleConnectionCheckEnabled}")
     private boolean staleConnectionCheckEnabled;
 
     /**
