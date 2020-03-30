@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cloud.mapper.CategoryParameterMapper">
-  <resultMap id="BaseResultMap" type="cloud.entity.CategoryParameter">
+<mapper namespace="elec.cloud.mapper.CategoryParameterMapper">
+  <resultMap id="BaseResultMap" type="elec.cloud.entity.CategoryParameter">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="category_id" jdbcType="INTEGER" property="categoryId" />
     <result column="parameter_id" jdbcType="INTEGER" property="parameterId" />
@@ -19,11 +19,11 @@
     delete from category_parameter
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cloud.entity.CategoryParameter" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="elec.cloud.entity.CategoryParameter" useGeneratedKeys="true">
     insert into category_parameter (category_id, parameter_id)
     values (#{categoryId,jdbcType=INTEGER}, #{parameterId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cloud.entity.CategoryParameter" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="elec.cloud.entity.CategoryParameter" useGeneratedKeys="true">
     insert into category_parameter
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="categoryId != null">
@@ -42,7 +42,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cloud.entity.CategoryParameter">
+  <update id="updateByPrimaryKeySelective" parameterType="elec.cloud.entity.CategoryParameter">
     update category_parameter
     <set>
       <if test="categoryId != null">
@@ -54,7 +54,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cloud.entity.CategoryParameter">
+  <update id="updateByPrimaryKey" parameterType="elec.cloud.entity.CategoryParameter">
     update category_parameter
     set category_id = #{categoryId,jdbcType=INTEGER},
       parameter_id = #{parameterId,jdbcType=INTEGER}

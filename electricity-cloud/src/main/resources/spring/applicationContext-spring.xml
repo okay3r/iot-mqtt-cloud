@@ -10,18 +10,15 @@
 
     <aop:aspectj-autoproxy proxy-target-class="true" />
 
-    <context:component-scan base-package="cloud.asynTask"/>
+    <context:component-scan base-package="elec.cloud.asynTask"/>
     <task:annotation-driven executor="annotationExecutor"/>
     <!-- 支持 @Async 注解 -->
     <task:executor id="annotationExecutor" pool-size="20"/>
 
-    <bean name="webLog" class="cloud.utils.WebLogAspect">
-
-    </bean>
-
+    <bean name="webLog" class="elec.cloud.utils.WebLogAspect"/>
     <aop:config>
         <aop:aspect ref="webLog">
-            <aop:pointcut id="doLog" expression="execution(public * cloud.controller.*.*(..))"/>
+            <aop:pointcut id="doLog" expression="execution(public * elec.cloud.controller.*.*(..))"/>
             <aop:before method="doBefore" pointcut-ref="doLog"/>
             <aop:after-returning method="doAfterReturning" returning="ret" pointcut-ref="doLog"/>
         </aop:aspect>

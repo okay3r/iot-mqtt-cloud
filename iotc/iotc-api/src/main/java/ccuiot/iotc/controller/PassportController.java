@@ -43,9 +43,7 @@ public class PassportController {
      */
     @ApiOperation(value = "用户注册", notes = "用户注册", httpMethod = "POST")
     @PostMapping("/register")
-    public ApiJsonResult login(
-            @RequestBody UserBo userBo
-    ) {
+    public ApiJsonResult login( UserBo userBo) {
         ApiJsonResult registerResult = this.userService.userRegister(userBo);
         return registerResult;
     }

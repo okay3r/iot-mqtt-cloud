@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cloud.mapper.AlarmDao">
-  <resultMap id="BaseResultMap" type="cloud.entity.Alarm">
+<mapper namespace="elec.cloud.mapper.AlarmDao">
+  <resultMap id="BaseResultMap" type="elec.cloud.entity.Alarm">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="device_id" jdbcType="INTEGER" property="deviceId" />
     <result column="parameter_id" jdbcType="INTEGER" property="parameterId" />
@@ -21,13 +21,13 @@
     delete from alarm
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cloud.entity.Alarm" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="elec.cloud.entity.Alarm" useGeneratedKeys="true">
     insert into alarm (device_id, parameter_id, up, 
       down)
     values (#{deviceId,jdbcType=INTEGER}, #{parameterId,jdbcType=INTEGER}, #{up,jdbcType=INTEGER}, 
       #{down,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cloud.entity.Alarm" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="elec.cloud.entity.Alarm" useGeneratedKeys="true">
     insert into alarm
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="deviceId != null">
@@ -58,7 +58,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cloud.entity.Alarm">
+  <update id="updateByPrimaryKeySelective" parameterType="elec.cloud.entity.Alarm">
     update alarm
     <set>
       <if test="deviceId != null">
@@ -76,7 +76,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cloud.entity.Alarm">
+  <update id="updateByPrimaryKey" parameterType="elec.cloud.entity.Alarm">
     update alarm
     set device_id = #{deviceId,jdbcType=INTEGER},
       parameter_id = #{parameterId,jdbcType=INTEGER},

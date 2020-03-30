@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>electricity-cloud Maven Webapp</name>
+    <name>electricity-elec.cloud Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -207,7 +207,6 @@
         </dependency>
 
 
-        <!--  mybatisplus-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -216,16 +215,16 @@
         </dependency>
 
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus</artifactId>
-            <version>3.0.1</version>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+            <version>3.4.3</version>
         </dependency>
 
 
     </dependencies>
 
     <build>
-        <finalName>electricity-cloud</finalName>
+        <finalName>electricity-elec.cloud</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>

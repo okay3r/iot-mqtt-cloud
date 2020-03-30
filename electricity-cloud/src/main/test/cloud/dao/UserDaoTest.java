@@ -1,7 +1,7 @@
-package cloud.mapper;
+package elec.cloud.mapper;
 
-import cloud.entity.DeviceCategoryVo;
-import cloud.service.DeviceService;
+import elec.cloud.entity.DeviceCategoryVo;
+import elec.cloud.service.DeviceService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

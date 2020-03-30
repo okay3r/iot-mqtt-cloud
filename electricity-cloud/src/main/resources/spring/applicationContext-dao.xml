@@ -26,7 +26,7 @@
     <!--&lt;!&ndash; 配置mapper扫描包，SqlSessionConfig.xml中的mapper配置去掉 &ndash;&gt;
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         &lt;!&ndash; 指定扫描的包 &ndash;&gt;
-        <property name="basePackage" value="cloud.mapper"/>
+        <property name="basePackage" value="elec.cloud.mapper"/>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>-->
 
@@ -36,6 +36,6 @@
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="cloud.mapper"/>
+        <property name="basePackage" value="elec.cloud.mapper"/>
     </bean>
 </beans>

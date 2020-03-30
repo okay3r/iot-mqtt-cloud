@@ -8,9 +8,9 @@ emqx:
     qosList: 2
 
 rabbitmq:
-  address: 127.0.0.1:5672
-  username: guest
-  password: guest
+  address: 192.168.38.131:5672
+  username: admin
+  password: admin
   virtual-host: /
   exchange:
     name: iot-mqtt-exchange

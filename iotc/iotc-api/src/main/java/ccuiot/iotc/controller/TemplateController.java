@@ -12,16 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Api(value = "模板", tags = "模板——相关接口")
 @RestController
-@RequestMapping("/template")
+@RequestMapping
 public class TemplateController {
 
     /**
      * 模板方法
      */
     @ApiOperation(value = "模板方法", notes = "模板方法", httpMethod = "POST")
-    @PostMapping("/login")
+    @PostMapping("/hello")
     public ApiJsonResult login() {
-        return ApiJsonResult.ok();
+        return ApiJsonResult.ok("Hello IOTC！");
     }
 
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cloud.mapper.UserMapper">
-    <resultMap id="BaseResultMap" type="cloud.entity.User">
+<mapper namespace="elec.cloud.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="elec.cloud.entity.User">
         <id column="id" jdbcType="INTEGER" property="id"/>
         <result column="username" jdbcType="VARCHAR" property="username"/>
         <result column="password" jdbcType="VARCHAR" property="password"/>
@@ -20,7 +20,7 @@
         from user
         where id = #{id,jdbcType=INTEGER}
     </select>
-    <select id="selectBySelective" resultType="cloud.entity.User">
+    <select id="selectBySelective" resultType="elec.cloud.entity.User">
         select
         <include refid="Base_Column_List"/>
         from user
@@ -52,7 +52,7 @@
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
-    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cloud.entity.User" useGeneratedKeys="true">
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="elec.cloud.entity.User" useGeneratedKeys="true">
     insert into user (username, `password`, email, 
       phone, remark, create_time, 
       update_time)
@@ -60,7 +60,7 @@
       #{phone,jdbcType=CHAR}, #{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cloud.entity.User"
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="elec.cloud.entity.User"
             useGeneratedKeys="true">
         insert into user
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -110,7 +110,7 @@
             </if>
         </trim>
     </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="cloud.entity.User">
+    <update id="updateByPrimaryKeySelective" parameterType="elec.cloud.entity.User">
         update user
         <set>
             <if test="username != null">
@@ -137,7 +137,7 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKey" parameterType="cloud.entity.User">
+    <update id="updateByPrimaryKey" parameterType="elec.cloud.entity.User">
     update user
     set username = #{username,jdbcType=VARCHAR},
       `password` = #{password,jdbcType=VARCHAR},

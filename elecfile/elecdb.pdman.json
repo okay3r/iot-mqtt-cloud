@@ -197,101 +197,6 @@
           ]
         },
         {
-          "title": "category_parameter",
-          "chnname": "类别-参数对应",
-          "fields": [
-            {
-              "name": "id",
-              "type": "INT_10",
-              "chnname": "",
-              "remark": "",
-              "pk": true,
-              "notNull": true,
-              "autoIncrement": true,
-              "defaultValue": ""
-            },
-            {
-              "name": "category_id",
-              "type": "BigInt",
-              "chnname": "类别id",
-              "remark": "",
-              "pk": false,
-              "notNull": true,
-              "autoIncrement": false,
-              "defaultValue": ""
-            },
-            {
-              "name": "category_name",
-              "type": "DefaultString",
-              "remark": "",
-              "chnname": "类别名称"
-            },
-            {
-              "name": "param_id",
-              "type": "BigInt",
-              "chnname": "参数id",
-              "remark": "",
-              "pk": false,
-              "notNull": true,
-              "autoIncrement": false,
-              "defaultValue": ""
-            },
-            {
-              "name": "param_name",
-              "type": "DefaultString",
-              "remark": "",
-              "chnname": "参数名称"
-            }
-          ],
-          "indexs": [],
-          "headers": [
-            {
-              "fieldName": "chnname",
-              "relationNoShow": false
-            },
-            {
-              "fieldName": "name",
-              "relationNoShow": false
-            },
-            {
-              "fieldName": "type",
-              "relationNoShow": false
-            },
-            {
-              "fieldName": "dataType",
-              "relationNoShow": true
-            },
-            {
-              "fieldName": "remark",
-              "relationNoShow": true
-            },
-            {
-              "fieldName": "pk",
-              "relationNoShow": false
-            },
-            {
-              "fieldName": "notNull",
-              "relationNoShow": true
-            },
-            {
-              "fieldName": "autoIncrement",
-              "relationNoShow": true
-            },
-            {
-              "fieldName": "defaultValue",
-              "relationNoShow": true
-            },
-            {
-              "fieldName": "relationNoShow",
-              "relationNoShow": true
-            },
-            {
-              "fieldName": "uiHint",
-              "relationNoShow": true
-            }
-          ]
-        },
-        {
           "title": "data_record",
           "chnname": "数据记录",
           "fields": [
@@ -365,6 +270,101 @@
               "notNull": true,
               "autoIncrement": false,
               "defaultValue": ""
+            }
+          ],
+          "indexs": [],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "dataType",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "notNull",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "autoIncrement",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "defaultValue",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "uiHint",
+              "relationNoShow": true
+            }
+          ]
+        },
+        {
+          "title": "category_parameter",
+          "chnname": "类别-参数对应",
+          "fields": [
+            {
+              "name": "id",
+              "type": "INT_10",
+              "chnname": "",
+              "remark": "",
+              "pk": true,
+              "notNull": true,
+              "autoIncrement": true,
+              "defaultValue": ""
+            },
+            {
+              "name": "category_id",
+              "type": "BigInt",
+              "chnname": "类别id",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "category_name",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "类别名称"
+            },
+            {
+              "name": "param_id",
+              "type": "BigInt",
+              "chnname": "参数id",
+              "remark": "",
+              "pk": false,
+              "notNull": true,
+              "autoIncrement": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "param_name",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "参数名称"
             }
           ],
           "indexs": [],
@@ -1299,7 +1299,7 @@
         "defaultDB": true,
         "properties": {
           "driver_class_name": "com.mysql.jdbc.Driver",
-          "url": "jdbc:mysql://127.0.0.1:3306/elec?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=UTC",
+          "url": "jdbc:mysql://192.168.38.131:3306/elec?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=UTC",
           "password": "root",
           "username": "root"
         }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cloud.mapper.ParameterMapper">
-  <resultMap id="BaseResultMap" type="cloud.entity.Parameter">
+<mapper namespace="elec.cloud.mapper.ParameterMapper">
+  <resultMap id="BaseResultMap" type="elec.cloud.entity.Parameter">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="parameter_name" jdbcType="VARCHAR" property="parameterName" />
     <result column="parameter_unit" jdbcType="VARCHAR" property="parameterUnit" />
@@ -19,11 +19,11 @@
     delete from parameter
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="cloud.entity.Parameter" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="elec.cloud.entity.Parameter" useGeneratedKeys="true">
     insert into parameter (`parameter_name`, parameter_unit)
     values (#{parameterName,jdbcType=VARCHAR}, #{parameterUnit,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="cloud.entity.Parameter" useGeneratedKeys="true">
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="elec.cloud.entity.Parameter" useGeneratedKeys="true">
     insert into parameter
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="parameterName != null">
@@ -42,7 +42,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cloud.entity.Parameter">
+  <update id="updateByPrimaryKeySelective" parameterType="elec.cloud.entity.Parameter">
     update parameter
     <set>
       <if test="parameterName != null">
@@ -54,7 +54,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cloud.entity.Parameter">
+  <update id="updateByPrimaryKey" parameterType="elec.cloud.entity.Parameter">
     update parameter
     set `parameter_name` = #{parameterName,jdbcType=VARCHAR},
       parameter_unit = #{parameterUnit,jdbcType=VARCHAR}

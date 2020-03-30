@@ -5,7 +5,6 @@ import javax.persistence.*;
 public class Category {
     @Id
     private Long id;
-
     /**
      * 类别名称
      */

@@ -19,7 +19,7 @@
 
     <!-- 配置处理器Bean的读取 -->
     <!-- 扫描controller注解,多个包中间使用半角逗号分隔 -->
-    <context:component-scan base-package="cloud.controller"/>
+    <context:component-scan base-package="elec.cloud.controller"/>
 
     <!-- 配置三大组件之处理器适配器和处理器映射器 -->
     <!-- 内置了RequestMappingHandlerMapping和RequestMappingHandlerAdapter等组件注册-->
@@ -41,7 +41,7 @@
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/user/**"/>
-            <bean class="cloud.interceptor.SignInInterceptor"/>
+            <bean class="elec.cloud.interceptor.SignInInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
 
