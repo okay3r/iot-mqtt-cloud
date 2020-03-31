@@ -1,7 +1,9 @@
 package yx.graduation.elec.pojo;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
-import javax.persistence.*;
 
 @Table(name = "data_record")
 public class DataRecord {
@@ -12,7 +14,7 @@ public class DataRecord {
      * 设备id
      */
     @Column(name = "device_id")
-    private Long deviceId;
+    private String deviceId;
 
     /**
      * 设备名称
@@ -64,7 +66,7 @@ public class DataRecord {
      *
      * @return device_id - 设备id
      */
-    public Long getDeviceId() {
+    public String getDeviceId() {
         return deviceId;
     }
 
@@ -73,7 +75,7 @@ public class DataRecord {
      *
      * @param deviceId 设备id
      */
-    public void setDeviceId(Long deviceId) {
+    public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
     }
 

@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 import yx.graduation.utils.ApiJsonResult;
 
 
-@Api(value = "模板", tags = "模板——相关接口")
+@Api(value = "参数", tags = "参数相关接口")
 @RestController
 @RequestMapping
-public class TemplateController {
+public class ParameterController {
 
     /**
      * 模板方法

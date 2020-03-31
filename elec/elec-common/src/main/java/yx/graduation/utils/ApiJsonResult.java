@@ -16,7 +16,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * 				555：异常抛出信息
  * 				556: 用户qq校验异常
  */
-public class ElecResult {
+public class ApiJsonResult {
 
     // 定义jackson对象
     private static final ObjectMapper MAPPER = new ObjectMapper();
@@ -33,60 +33,60 @@ public class ElecResult {
     @JsonIgnore
     private String ok;	// 不使用
 
-    public static ElecResult build(Integer status, String msg, Object data) {
-        return new ElecResult(status, msg, data);
+    public static ApiJsonResult build(Integer status, String msg, Object data) {
+        return new ApiJsonResult(status, msg, data);
     }
 
-    public static ElecResult build(Integer status, String msg, Object data, String ok) {
-        return new ElecResult(status, msg, data, ok);
+    public static ApiJsonResult build(Integer status, String msg, Object data, String ok) {
+        return new ApiJsonResult(status, msg, data, ok);
     }
     
-    public static ElecResult ok(Object data) {
-        return new ElecResult(data);
+    public static ApiJsonResult ok(Object data) {
+        return new ApiJsonResult(data);
     }
 
-    public static ElecResult ok() {
-        return new ElecResult(null);
+    public static ApiJsonResult ok() {
+        return new ApiJsonResult(null);
     }
     
-    public static ElecResult errorMsg(String msg) {
-        return new ElecResult(500, msg, null);
+    public static ApiJsonResult errorMsg(String msg) {
+        return new ApiJsonResult(500, msg, null);
     }
     
-    public static ElecResult errorMap(Object data) {
-        return new ElecResult(501, "error", data);
+    public static ApiJsonResult errorMap(Object data) {
+        return new ApiJsonResult(501, "error", data);
     }
     
-    public static ElecResult errorTokenMsg(String msg) {
-        return new ElecResult(502, msg, null);
+    public static ApiJsonResult errorTokenMsg(String msg) {
+        return new ApiJsonResult(502, msg, null);
     }
     
-    public static ElecResult errorException(String msg) {
-        return new ElecResult(555, msg, null);
+    public static ApiJsonResult errorException(String msg) {
+        return new ApiJsonResult(555, msg, null);
     }
     
-    public static ElecResult errorUserQQ(String msg) {
-        return new ElecResult(556, msg, null);
+    public static ApiJsonResult errorUserQQ(String msg) {
+        return new ApiJsonResult(556, msg, null);
     }
 
-    public ElecResult() {
+    public ApiJsonResult() {
 
     }
 
-    public ElecResult(Integer status, String msg, Object data) {
+    public ApiJsonResult(Integer status, String msg, Object data) {
         this.status = status;
         this.msg = msg;
         this.data = data;
     }
     
-    public ElecResult(Integer status, String msg, Object data, String ok) {
+    public ApiJsonResult(Integer status, String msg, Object data, String ok) {
         this.status = status;
         this.msg = msg;
         this.data = data;
         this.ok = ok;
     }
 
-    public ElecResult(Object data) {
+    public ApiJsonResult(Object data) {
         this.status = 200;
         this.msg = "OK";
         this.data = data;

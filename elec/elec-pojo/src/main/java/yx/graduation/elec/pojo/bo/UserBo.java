@@ -12,4 +12,6 @@ public class UserBo {
 
     private String phone;
 
+    private String remark;
+
 }

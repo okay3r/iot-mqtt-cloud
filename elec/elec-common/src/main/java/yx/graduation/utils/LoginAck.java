@@ -7,12 +7,12 @@ import java.util.Date;
 @Data
 public class LoginAck {
 
-    private String cacheKey;
+    private String username;
     private String secretKey;
     private Date time;
 
-    public LoginAck(String cacheKey, String secretKey, Date time) {
-        this.cacheKey = cacheKey;
+    public LoginAck(String username, String secretKey, Date time) {
+        this.username = username;
         this.secretKey = secretKey;
         this.time = time;
     }

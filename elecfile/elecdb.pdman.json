@@ -20,7 +20,7 @@
             },
             {
               "name": "device_id",
-              "type": "BigInt",
+              "type": "IdOrKey",
               "chnname": "设备id",
               "remark": "",
               "pk": false,
@@ -212,7 +212,7 @@
             },
             {
               "name": "device_id",
-              "type": "BigInt",
+              "type": "IdOrKey",
               "chnname": "设备id",
               "remark": "",
               "pk": false,
@@ -421,12 +421,12 @@
           "fields": [
             {
               "name": "id",
-              "type": "BigInt",
+              "type": "IdOrKey",
               "chnname": "",
               "remark": "",
               "pk": true,
               "notNull": true,
-              "autoIncrement": true,
+              "autoIncrement": false,
               "defaultValue": ""
             },
             {
@@ -456,8 +456,8 @@
               "chnname": "类别名称"
             },
             {
-              "name": "user_id",
-              "type": "BigInt",
+              "name": "username",
+              "type": "IdOrKey",
               "chnname": "所属用户id",
               "remark": "",
               "pk": false,
@@ -752,7 +752,64 @@
         }
       ],
       "graphCanvas": {
-        "nodes": [],
+        "nodes": [
+          {
+            "shape": "table",
+            "title": "category",
+            "moduleName": false,
+            "x": 230,
+            "y": 110,
+            "id": "88e1a69d"
+          },
+          {
+            "shape": "table",
+            "title": "category_parameter",
+            "moduleName": false,
+            "x": 550,
+            "y": 130,
+            "id": "b31af674"
+          },
+          {
+            "shape": "table",
+            "title": "device",
+            "moduleName": false,
+            "x": 230,
+            "y": 310,
+            "id": "103beffc"
+          },
+          {
+            "shape": "table",
+            "title": "user",
+            "moduleName": false,
+            "x": 280,
+            "y": 520,
+            "id": "c7194789"
+          },
+          {
+            "shape": "table",
+            "title": "parameter",
+            "moduleName": false,
+            "x": 830,
+            "y": 110,
+            "id": "dc2a25b4"
+          },
+          {
+            "shape": "table",
+            "title": "data_record",
+            "moduleName": false,
+            "x": 550,
+            "y": 320,
+            "id": "5615d5d5"
+          },
+          {
+            "shape": "table",
+            "title": "alarm",
+            "moduleName": false,
+            "x": 850,
+            "y": 310,
+            "id": "36bb00a8"
+          }
+        ],
         "edges": []
       },
       "associations": []

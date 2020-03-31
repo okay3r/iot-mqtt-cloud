@@ -1,10 +1,12 @@
 package yx.graduation.elec.pojo;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
 
 public class Category {
     @Id
     private Long id;
+
     /**
      * 类别名称
      */

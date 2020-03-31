@@ -1,6 +1,7 @@
 package yx.graduation.elec.pojo;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
 
 public class Alarm {
     @Id
@@ -10,7 +11,7 @@ public class Alarm {
      * 设备id
      */
     @Column(name = "device_id")
-    private Long deviceId;
+    private String deviceId;
 
     /**
      * 设备名称
@@ -53,7 +54,7 @@ public class Alarm {
      *
      * @return device_id - 设备id
      */
-    public Long getDeviceId() {
+    public String getDeviceId() {
         return deviceId;
     }
 
@@ -62,7 +63,7 @@ public class Alarm {
      *
      * @param deviceId 设备id
      */
-    public void setDeviceId(Long deviceId) {
+    public void setDeviceId(String deviceId) {
         this.deviceId = deviceId;
     }
 

@@ -10,7 +10,7 @@ import yx.graduation.elec.mapper.UserMapper;
 import yx.graduation.elec.pojo.User;
 import yx.graduation.elec.pojo.bo.UserBo;
 import yx.graduation.elec.service.UserService;
-import yx.graduation.utils.ElecResult;
+import yx.graduation.utils.ApiJsonResult;
 import yx.graduation.utils.MobileEmailUtils;
 
 import java.util.Date;
@@ -21,12 +21,14 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
-    @Override
+    /**
+     * 创建新用户
+     */
     @Transactional(propagation = Propagation.REQUIRED)
-    public ElecResult register(UserBo userBo) {
+    public ApiJsonResult createUser(UserBo userBo) {
         String check = check(userBo);
         if (check != null) {
-            return ElecResult.errorMsg(check);
+            return ApiJsonResult.errorMsg(check);
         }
 
         User user = new User();
@@ -34,19 +36,37 @@ public class UserServiceImpl implements UserService {
         Date now = new Date();
         user.setCreateTime(now);
         user.setUpdateTime(now);
-        user.setRemark("无");
+        // user.setRemark("无");
 
         this.userMapper.insert(user);
-        return ElecResult.ok();
+        return ApiJsonResult.ok("注册成功");
     }
 
+    /**
+     * 登录验证用户名、密码
+     */
     @Override
-    public User login(String username, String password) {
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public User queryForLogin(String username, String password) {
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);
         User one = this.userMapper.selectOne(user);
         return one;
+    }
+
+    /**
+     * 根据用户名查询用户id
+     *
+     * @return
+     */
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public User queryUserByName(String username) {
+        User user = new User();
+        user.setUsername(username);
+        User res = this.userMapper.selectOne(user);
+        return res;
     }
 
     @Transactional(propagation = Propagation.SUPPORTS)

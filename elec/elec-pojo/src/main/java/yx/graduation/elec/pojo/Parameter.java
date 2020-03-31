@@ -1,6 +1,7 @@
 package yx.graduation.elec.pojo;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Id;
 
 public class Parameter {
     @Id
