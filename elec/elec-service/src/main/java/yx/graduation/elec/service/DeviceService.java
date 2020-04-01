@@ -11,4 +11,6 @@ public interface DeviceService {
     List<Device> queryDeviceByUserId(String username);
 
     ApiJsonResult createDevice(String username, DeviceBo deviceBo);
+
+    List<Device> queryAll();
 }

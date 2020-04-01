@@ -15,10 +15,10 @@
     <context:component-scan base-package="yx.graduation.elec.config"/>
 
 
-    <!--<context:component-scan base-package="elec.cloud.asynTask"/>-->
-    <!--<task:annotation-driven executor="annotationExecutor"/>-->
+    <context:component-scan base-package="yx.graduation.elec.async"/>
+    <task:annotation-driven executor="annotationExecutor"/>
     <!-- 支持 @Async 注解 -->
-    <!--<task:executor id="annotationExecutor" pool-size="20"/>-->
+    <task:executor id="annotationExecutor" pool-size="20"/>
 
     <bean id="webLog" class="yx.graduation.elec.config.WebLogAspect"/>
     <aop:config>

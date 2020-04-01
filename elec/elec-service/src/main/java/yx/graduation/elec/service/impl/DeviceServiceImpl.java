@@ -39,7 +39,6 @@ public class DeviceServiceImpl implements DeviceService {
 
     /**
      * 添加新的设备
-     * @return
      */
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
@@ -63,6 +62,12 @@ public class DeviceServiceImpl implements DeviceService {
         if (res != 1) {
             return ApiJsonResult.errorMsg("添加失败");
         }
-        return ApiJsonResult.ok("添加成功");
+        return ApiJsonResult.ok(device);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public List<Device> queryAll() {
+        return this.deviceMapper.selectAll();
     }
 }

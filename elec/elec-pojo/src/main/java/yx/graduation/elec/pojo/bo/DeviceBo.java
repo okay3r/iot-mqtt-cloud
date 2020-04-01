@@ -8,5 +8,6 @@ public class DeviceBo {
     private String deviceName;
     private Long categoryId;
     private String categoryName;
+    private String remark;
 
 }

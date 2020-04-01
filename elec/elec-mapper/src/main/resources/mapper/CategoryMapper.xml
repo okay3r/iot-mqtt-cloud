@@ -1,12 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="yx.graduation.elec.mapper.CategoryMapper" >
-  <resultMap id="BaseResultMap" type="yx.graduation.elec.pojo.Category" >
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="category_name" property="categoryName" jdbcType="VARCHAR" />
-    <result column="category_remark" property="categoryRemark" jdbcType="VARCHAR" />
-  </resultMap>
+<mapper namespace="yx.graduation.elec.mapper.CategoryMapper">
+    <resultMap id="BaseResultMap" type="yx.graduation.elec.pojo.Category">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="category_name" property="categoryName" jdbcType="VARCHAR"/>
+        <result column="category_remark" property="categoryRemark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <insert id="insertGetKey" parameterType="yx.graduation.elec.pojo.CategoryParameter" useGeneratedKeys="true"
+            keyProperty="id" keyColumn="id">
+      insert into category
+      (category_name,category_remark)
+      values
+      (#{category.categoryName},#{category.categoryRemark})
+    </insert>
+  
+  
+    <resultMap id="myCategoryVo" type="CategoryVo">
+        <result column="cname" property="categoryName"/>
+        <result column="cremark" property="categoryRemark"/>
+        <collection property="parameterVoList" ofType="ParameterVo">
+            <result column="pname" property="parameterName"/>
+            <result column="punit" property="parameterUnit"/>
+        </collection>
+    </resultMap>
+
+    <select id="queryCategoryParamCompose" resultMap="myCategoryVo" parameterType="long">
+      SELECT
+          c.category_name as cname,
+          c.category_remark as cremark,
+          p.parameter_name as pname,
+          p.parameter_unit as punit
+      FROM
+          category c
+      LEFT JOIN
+          category_parameter cp
+      ON
+          c.id = cp.category_id
+      LEFT JOIN
+          parameter p
+      ON
+          cp.param_id = p.id
+      WHERE
+          c.id = #{categoryId}
+
+    </select>
 </mapper>
