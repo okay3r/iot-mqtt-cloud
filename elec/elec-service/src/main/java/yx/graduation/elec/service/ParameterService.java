@@ -9,4 +9,6 @@ public interface ParameterService {
     ApiJsonResult createParameter(String paramName, String unit);
 
     List<Parameter> queryAll();
+
+    List<Parameter> queryParameterSelective(Parameter parameter);
 }

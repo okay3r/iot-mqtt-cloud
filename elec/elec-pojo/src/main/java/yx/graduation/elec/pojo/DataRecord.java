@@ -14,6 +14,11 @@ public class DataRecord {
     private Long id;
 
     /**
+     * ip
+     */
+    private String host;
+
+    /**
      * 设备id
      */
     @Column(name = "device_id")

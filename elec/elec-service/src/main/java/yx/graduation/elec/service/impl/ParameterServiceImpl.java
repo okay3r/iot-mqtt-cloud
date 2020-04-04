@@ -46,4 +46,10 @@ public class ParameterServiceImpl implements ParameterService {
     public List<Parameter> queryAll() {
         return this.parameterMapper.selectAll();
     }
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public List<Parameter> queryParameterSelective(Parameter parameter) {
+        return this.parameterMapper.select(parameter);
+    }
 }

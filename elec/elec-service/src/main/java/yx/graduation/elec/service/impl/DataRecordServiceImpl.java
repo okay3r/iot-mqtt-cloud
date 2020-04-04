@@ -24,13 +24,12 @@ public class DataRecordServiceImpl implements DataRecordService {
     private DataRecordMapper dataRecordMapper;
 
     /**
-     * 将接收到的消息存储到db中
+     * 将消息存储到db
      */
-    @Transactional(propagation = Propagation.REQUIRED)
     @Override
+    @Transactional(propagation = Propagation.REQUIRED)
     public void storeMessage(MessageVo messageVo) throws Exception {
         String deviceId = messageVo.getDeviceId();
-        int value = Integer.parseInt(messageVo.getMsg());
         String parameterName = messageVo.getParameter();
         DataRecord dataRecord = new DataRecord();
 
@@ -41,9 +40,10 @@ public class DataRecordServiceImpl implements DataRecordService {
             throw new Exception();
         }
 
+        dataRecord.setHost(messageVo.getHost());
         dataRecord.setDeviceId(deviceId);
         dataRecord.setDeviceName(deviceName);
-        dataRecord.setValue(value);
+        dataRecord.setValue(Integer.parseInt(messageVo.getMsg()));
         dataRecord.setParamName(parameterName);
         dataRecord.setParamUnit(unit);
         dataRecord.setTime(new Date());

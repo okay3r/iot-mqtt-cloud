@@ -50,6 +50,9 @@ public class CategoryServiceImpl implements CategoryService {
         for (String param : paramList) {
             long paramId = Long.parseLong(param);
             Parameter parameter = this.parameterMapper.selectByPrimaryKey(paramId);
+            if (parameter == null) {
+                return ApiJsonResult.errorMsg("参数id：" + param + " 不存在");
+            }
             CategoryParameter cp = new CategoryParameter();
             cp.setParamId(paramId);
             cp.setParamName(parameter.getParameterName());

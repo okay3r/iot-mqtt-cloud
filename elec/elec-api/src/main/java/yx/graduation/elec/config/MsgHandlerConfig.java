@@ -12,7 +12,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  */
 @Configuration
 @EnableAsync
-public class ConnectionTaskConfig {
+public class MsgHandlerConfig {
 
 /**
  *   默认情况下，在创建了线程池后，线程池中的线程数为0，当有任务来之后，就会创建一个线程去执行任务，
@@ -39,9 +39,9 @@ public class ConnectionTaskConfig {
     /**
      * 线程池名前缀
      */
-    private static final String threadNamePrefix = "Conn-";
+    private static final String threadNamePrefix = "HandleMsg-";
 
-    @Bean("connTaskExecutor") // bean的名称，默认为首字母小写的方法名
+    @Bean("msgHandlerExecutor") // bean的名称，默认为首字母小写的方法名
     public ThreadPoolTaskExecutor taskExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         executor.setCorePoolSize(corePoolSize);

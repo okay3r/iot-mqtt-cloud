@@ -1,6 +1,7 @@
 package yx.graduation.elec.async;
 
 import com.alibaba.fastjson.JSON;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +9,6 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import yx.graduation.elec.pojo.vo.MessageVo;
 import yx.graduation.elec.service.DataRecordService;
-import yx.graduation.elec.service.UserService;
 
 import java.io.*;
 import java.net.InetAddress;
@@ -24,9 +24,29 @@ public class AsynTaskBean {
     @Autowired
     private DataRecordService dataRecordService;
 
-    private Map<String, Socket> connMap = new HashMap<>();
+    @Autowired
+    private DoMsgJob doMsgJob;
 
-    @Async
+    /**
+     * host = socket
+     */
+    private static Map<String, Socket> connMap = new HashMap<>();
+
+    /**
+     * deviceId = writer
+     */
+    private static Map<String, PrintWriter> deviceWriterMap = new HashMap<>();
+
+    /**
+     * host = deviceIdList
+     */
+    private static Map<String, List<String>> hostDeviceMap = new HashMap<>();
+
+
+    /**
+     * 处理新的连接
+     */
+    @Async("connTaskExecutor")
     public void handleConn() {
         ServerSocket serverSocket = null;
         try {
@@ -40,57 +60,91 @@ public class AsynTaskBean {
                 InetAddress address = socket.getInetAddress();
                 LOGGER.info(address + "建立连接");
                 connMap.put(address.toString(), socket);
-                this.doJob(socket);
+
+                //开启线程处理
+                // new Thread(new DeviceHandler(socket, dataRecordService)).start();
+                doMsgJob.doJob(socket);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    @Async
-    public void doJob(Socket socket) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));// 获得输出流
-        PrintWriter pw = new PrintWriter(bw);
-        String message = null;
-        while (true) {
-            try {
-                while (true) {
-                    message = br.readLine();
-                    MessageVo messageVo = JSON.parseObject(message, MessageVo.class);
-                    this.dataRecordService.storeMessage(messageVo);
+
+
+
+
+    public static Set<String> getCurrentConns() {
+        return connMap.keySet();
+    }
+
+    public static String closeConn(String host) {
+        Socket socket = connMap.get(host);
+        if (socket == null) {
+            return "host不存在";
+        }
+        try {
+            socket.close();
+            connMap.remove(host);
+            List<String> deviceIdList = hostDeviceMap.get(host);
+            if (deviceIdList != null) {
+                for (String deviceId : deviceIdList) {
+                    deviceWriterMap.remove(deviceId);
                 }
-            } catch (Exception e) {
+            }
+            hostDeviceMap.remove(host);
+
+            LOGGER.info(host + "断开连接");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "断开连接成功";
+    }
+
+    public static void putConn(String host, Socket socket) {
+        connMap.put(host, socket);
+    }
+
+    public static void putDeviceWriter(String deviceId, PrintWriter printWriter) {
+        deviceWriterMap.put(deviceId, printWriter);
+    }
+
+    public static void putHostDeviceIdList(String host, List<String> deviceIdList) {
+        hostDeviceMap.put(host, deviceIdList);
+    }
+
+    public static Map<String, List<String>> getHostDeviceMap() {
+        return hostDeviceMap;
+    }
+
+    public static Map<String, Socket> getConnMap() {
+        return connMap;
+    }
+
+    public static Map<String, PrintWriter> getDeviceWriterMap() {
+        return deviceWriterMap;
+    }
+
+    /**
+     * 向设备发送消息
+     */
+    public static void writeTo(String deviceId, String msg) {
+        PrintWriter printWriter = deviceWriterMap.get(deviceId);
+        printWriter.write(msg);
+        printWriter.flush();
+    }
+
+    @Async("msgTaskExecutor")
+    public void doTest() {
+        for (int i = 0; i < 5; i++) {
+            LOGGER.info(i + "");
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
                 e.printStackTrace();
-                LOGGER.error("存储消息异常：" + message);
             }
         }
     }
 
-    public Set<String> getCurrentConns() {
-        return this.connMap.keySet();
-    }
 
-    public void closeConn(String address) {
-        Socket socket = this.connMap.get(address);
-        try {
-            socket.close();
-            this.connMap.remove(address);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    public static void main(String[] args) {
-        MessageVo messageVo = new MessageVo();
-        messageVo.setMsg("999");
-        messageVo.setDeviceId("20040102R6A5KH28");
-        messageVo.setParameter("temperature");
-        String s = JSON.toJSONString(messageVo);
-        System.out.println(s);
-        String to = "{\"deviceId\":\"dianji\",\"msg\":\"888\",\"parameter\":\"tem\"}\n";
-        MessageVo vo = JSON.parseObject(to, MessageVo.class);
-        System.out.println(vo);
-    }
 }

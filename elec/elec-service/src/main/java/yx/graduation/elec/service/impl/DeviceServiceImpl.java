@@ -1,6 +1,5 @@
 package yx.graduation.elec.service.impl;
 
-import io.swagger.annotations.Api;
 import org.n3r.idworker.Sid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +7,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import yx.graduation.elec.mapper.DeviceMapper;
+import yx.graduation.elec.pojo.Alarm;
 import yx.graduation.elec.pojo.Device;
 import yx.graduation.elec.pojo.bo.DeviceBo;
+import yx.graduation.elec.pojo.vo.CategoryVo;
+import yx.graduation.elec.pojo.vo.DeviceVo;
+import yx.graduation.elec.pojo.vo.ParameterVo;
+import yx.graduation.elec.service.CategoryService;
 import yx.graduation.elec.service.DeviceService;
 import yx.graduation.utils.ApiJsonResult;
 
@@ -23,6 +27,9 @@ public class DeviceServiceImpl implements DeviceService {
     private DeviceMapper deviceMapper;
 
     @Autowired
+    private CategoryService categoryService;
+
+    @Autowired
     private Sid sid;
 
 
@@ -31,10 +38,8 @@ public class DeviceServiceImpl implements DeviceService {
      */
     @Transactional(propagation = Propagation.SUPPORTS)
     @Override
-    public List<Device> queryDeviceByUserId(String username) {
-        Device record = new Device();
-        record.setUsername(username);
-        return this.deviceMapper.select(record);
+    public List<Device> queryDeviceSelective(Device device) {
+        return this.deviceMapper.select(device);
     }
 
     /**
@@ -70,4 +75,5 @@ public class DeviceServiceImpl implements DeviceService {
     public List<Device> queryAll() {
         return this.deviceMapper.selectAll();
     }
+
 }

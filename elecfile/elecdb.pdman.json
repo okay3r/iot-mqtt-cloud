@@ -32,7 +32,8 @@
               "name": "device_name",
               "type": "DefaultString",
               "remark": "",
-              "chnname": "设备名称"
+              "chnname": "设备名称",
+              "notNull": true
             },
             {
               "name": "param_id",
@@ -45,12 +46,19 @@
               "defaultValue": ""
             },
             {
+              "name": "param_name",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "参数名称",
+              "notNull": true
+            },
+            {
               "name": "up",
               "type": "Integer",
               "chnname": "上限",
               "remark": "",
               "pk": false,
-              "notNull": true,
+              "notNull": false,
               "autoIncrement": false,
               "defaultValue": ""
             },
@@ -60,7 +68,7 @@
               "chnname": "下限",
               "remark": "",
               "pk": false,
-              "notNull": true,
+              "notNull": false,
               "autoIncrement": false,
               "defaultValue": ""
             }
@@ -211,6 +219,12 @@
               "defaultValue": ""
             },
             {
+              "name": "host",
+              "type": "DefaultString",
+              "remark": "",
+              "chnname": "连接ip"
+            },
+            {
               "name": "device_id",
               "type": "IdOrKey",
               "chnname": "设备id",
@@ -231,16 +245,6 @@
               "name": "value",
               "type": "Integer",
               "chnname": "值",
-              "remark": "",
-              "pk": false,
-              "notNull": true,
-              "autoIncrement": false,
-              "defaultValue": ""
-            },
-            {
-              "name": "param_id",
-              "type": "BigInt",
-              "chnname": "参数id",
               "remark": "",
               "pk": false,
               "notNull": true,

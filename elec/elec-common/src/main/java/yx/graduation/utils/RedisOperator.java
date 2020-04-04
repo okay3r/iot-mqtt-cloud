@@ -19,6 +19,7 @@ public class RedisOperator {
     @Autowired
     private RedisTemplate redisTemplate;
 
+
     /**
      * 指定缓存失效时间
      *

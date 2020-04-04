@@ -4,11 +4,14 @@ import lombok.Data;
 
 public enum RedisKeyEnum {
 
-    USER_DEVICE("user_device"),
+    DEVICE_LIST("deviceList"),
     PARAMS("params"),
     CATS("cats"),
     PARAM_KV("param"),  //name-unit
-    DEVICE_KV("device"); //id-name
+    DEVICE_KV("device"), //id-name
+    ALARM_UP("alarmUp"),
+    ALARM_DOWN("alarmDown"),
+    HAS_ALARM("hasAlarm");
 
     public String value;
 
