@@ -46,7 +46,6 @@ public class MessageHandler {
             return;
         }
 
-
         Integer upValue = null;
         Integer downValue = null;
         try {
