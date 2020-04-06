@@ -6,20 +6,15 @@ import ccuiot.iotc.mapper.MqttPubMapper;
 import ccuiot.iotc.pojo.MqttPub;
 import ccuiot.iotc.pojo.bo.PublishBo;
 import ccuiot.iotc.service.MqttPubService;
-import ccuiot.iotc.utils.MyStringUtils;
 import ccuiot.iotc.utils.PagedGridResult;
 import com.github.pagehelper.PageHelper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 
-import javax.annotation.PostConstruct;
 import java.util.*;
 
 @Service
@@ -31,12 +26,12 @@ public class MqttPubServiceImpl extends BaseService implements MqttPubService {
     @Autowired
     private MqttPubMapper mqttPubMapper;
 
-
-
+    /**
+     * 使用http发送消息到mqtt服务器
+     */
     @Transactional(propagation = Propagation.SUPPORTS)
     @Override
-    public Boolean doPublish(String cacheKey, PublishBo publishBo) {
-        String username = MyStringUtils.getUserName(cacheKey);
+    public Boolean doPublish(String username, PublishBo publishBo) {
         Map<String, Object> paramsMap = new HashMap<>();
         paramsMap.put("topic", publishBo.getTopic());
         paramsMap.put("payload", publishBo.getPayload());

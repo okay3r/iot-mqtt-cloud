@@ -6,7 +6,7 @@ import ccuiot.iotc.utils.PagedGridResult;
 import java.util.Date;
 
 public interface MqttPubService {
-    Boolean doPublish(String cacheKey, PublishBo publishBo);
+    Boolean doPublish(String username, PublishBo publishBo);
 
     PagedGridResult list(Integer page, Integer pageSize);
 

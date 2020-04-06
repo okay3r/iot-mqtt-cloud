@@ -9,7 +9,7 @@ import (
 )
 
 func loadConfig() GlobalConfig {
-	path := "src/config"
+	path := "./"
 	v := viper.New()
 	//配置文件名称
 	v.SetConfigName("config")

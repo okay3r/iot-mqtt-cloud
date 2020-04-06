@@ -25,8 +25,8 @@ public class MySpringMvcConfig implements WebMvcConfigurer {
         //需要拦截的请求
         interceptorRegistration.addPathPatterns("/**");
         //不需要拦截的请求
-        interceptorRegistration.excludePathPatterns("/", "/index.html", "/login", "/css/**", "/img/**", "/js/**");
-        interceptorRegistration.excludePathPatterns("/user/**","/user/signUp");
+        interceptorRegistration.excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**", "/doc.html/**");
+        interceptorRegistration.excludePathPatterns("/passport/**","/hello");
     }
 
 

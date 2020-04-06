@@ -3,13 +3,19 @@ package ccuiot.iotc.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.ParameterBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.schema.ModelRef;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
+import springfox.documentation.service.Parameter;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * API文档生成
@@ -24,12 +30,21 @@ public class Swagger2 {
     // 配置swagger2核心配置 docket
     @Bean
     public Docket createRestApi() {
-        return new Docket(DocumentationType.SWAGGER_2)  // 指定api类型为swagger2
-                .apiInfo(apiInfo())                 // 用于定义api文档汇总信息
+        //添加head参数start
+        ParameterBuilder cacheKeyParm = new ParameterBuilder();
+        ParameterBuilder secretKeyParm = new ParameterBuilder();
+        List<Parameter> pars = new ArrayList<Parameter>();
+        cacheKeyParm.name("username").description("用户名").modelRef(new ModelRef("string")).parameterType("header").required(false).build();
+        secretKeyParm.name("secretKey").description("秘钥").modelRef(new ModelRef("string")).parameterType("header").required(false).build();
+        pars.add(cacheKeyParm.build());
+        pars.add(secretKeyParm.build());
+
+        return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("ccuiot.iotc.controller"))   // 指定controller包
-                .paths(PathSelectors.any())         // 所有controller
-                .build();
+                .apis(RequestHandlerSelectors.any())
+                .build()
+                .globalOperationParameters(pars)
+                .apiInfo(apiInfo());
     }
 
     private ApiInfo apiInfo() {

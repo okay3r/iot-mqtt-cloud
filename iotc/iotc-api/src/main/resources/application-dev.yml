@@ -1,6 +1,8 @@
 # 开发环境
 server:
   port: 8180
+  servlet:
+    context-path: /iotc
 
 spring:
   datasource:
@@ -11,7 +13,7 @@ spring:
     cache: false
 
   redis:
-    database: 0
+    database: 1
     password: root
     host: 192.168.38.131
     port: 6379

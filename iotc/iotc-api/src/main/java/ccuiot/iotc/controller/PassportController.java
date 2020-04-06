@@ -1,10 +1,8 @@
 package ccuiot.iotc.controller;
 
-import ccuiot.iotc.pojo.User;
 import ccuiot.iotc.pojo.bo.UserBo;
 import ccuiot.iotc.service.UserService;
 import ccuiot.iotc.utils.ApiJsonResult;
-import ccuiot.iotc.utils.LoginAck;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
@@ -31,11 +29,11 @@ public class PassportController {
         if (StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
             return ApiJsonResult.errorMsg("用户名或密码不能为空");
         }
-        LoginAck loginAck = this.userService.userLogin(username, password);
-        if (loginAck == null) {
+        String secretKey = this.userService.queryUserForLogin(username, password);
+        if (StringUtils.isBlank(secretKey)) {
             return ApiJsonResult.errorMsg("用户名或密码错误");
         }
-        return ApiJsonResult.ok(loginAck);
+        return ApiJsonResult.ok(secretKey);
     }
 
     /**
@@ -43,7 +41,7 @@ public class PassportController {
      */
     @ApiOperation(value = "用户注册", notes = "用户注册", httpMethod = "POST")
     @PostMapping("/register")
-    public ApiJsonResult login( UserBo userBo) {
+    public ApiJsonResult login(@RequestBody UserBo userBo) {
         ApiJsonResult registerResult = this.userService.userRegister(userBo);
         return registerResult;
     }

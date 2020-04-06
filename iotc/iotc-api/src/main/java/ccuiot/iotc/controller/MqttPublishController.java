@@ -33,8 +33,8 @@ public class MqttPublishController extends BaseController {
             @RequestBody PublishBo publishBo,
             HttpServletRequest request
     ) {
-        String cacheKey = request.getHeader("cacheKey");
-        this.mqttPubService.doPublish(cacheKey, publishBo);
+        String username = request.getHeader("username");
+        this.mqttPubService.doPublish(username, publishBo);
         return ApiJsonResult.ok();
     }
 

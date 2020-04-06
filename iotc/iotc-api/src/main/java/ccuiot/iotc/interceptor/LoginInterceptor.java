@@ -1,9 +1,10 @@
 package ccuiot.iotc.interceptor;
 
+import ccuiot.iotc.enums.RedisKeyEnum;
 import ccuiot.iotc.utils.ApiJsonResult;
-import ccuiot.iotc.utils.RedisUtils;
+import ccuiot.iotc.utils.RedisOperation;
 import com.alibaba.fastjson.JSON;
-import io.micrometer.core.instrument.util.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,23 +21,24 @@ public class LoginInterceptor implements HandlerInterceptor {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
-    private RedisUtils redisUtils;
+    private RedisOperation redisOperation;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        return true;
-       /* String cacheKey = request.getHeader("cacheKey");
+        String username = request.getHeader("username");
         String secretKey = request.getHeader("secretKey");
-        logger.info("Intercept Request token # " + cacheKey + " = " + secretKey);
-        String trueKey = (String) redisUtils.get(cacheKey);
-        if (!StringUtils.isEmpty(trueKey) && trueKey.equals(secretKey)) {
-            this.redisUtils.expire(cacheKey, 1800);
+        logger.info("校验秘钥 " + username + " = " + secretKey);
+        String key = RedisKeyEnum.USER_KEY.value + ":" + username;
+        String trueSecretKey = (String) redisOperation.get(key);
+        if (!StringUtils.isEmpty(trueSecretKey) && trueSecretKey.equals(secretKey)) {
+            this.redisOperation.expire(key, 1800);
             return true;
         }
         ApiJsonResult errorMsg = ApiJsonResult.errorMsg("信息错误");
         String json = JSON.toJSONString(errorMsg);
+        response.setCharacterEncoding("utf-8");
         response.getWriter().write(json);
-        return false;*/
+        return false;
     }
 
     @Override

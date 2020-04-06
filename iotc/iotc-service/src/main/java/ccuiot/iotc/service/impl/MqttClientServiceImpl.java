@@ -1,14 +1,14 @@
 package ccuiot.iotc.service.impl;
 
+import ccuiot.iotc.enums.RedisKeyEnum;
 import ccuiot.iotc.http.HttpClientService;
 import ccuiot.iotc.mapper.ClientTopicInfoMapper;
 import ccuiot.iotc.pojo.ClientTopicInfo;
 import ccuiot.iotc.service.MqttClientService;
-import ccuiot.iotc.utils.RedisUtils;
+import ccuiot.iotc.utils.RedisOperation;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,20 +23,24 @@ public class MqttClientServiceImpl extends BaseService implements MqttClientServ
     private HttpClientService httpClientService;
 
     @Autowired
-    private RedisUtils redisUtils;
+    private RedisOperation redisOperation;
 
-    @Value("${redis.cli.info.name.key}")
-    private String cliInfoNameKey;
+    private String cliInfoNameKey = RedisKeyEnum.CLIENT_INFO_NAME.value;
 
-    @Value("${redis.cli.info.remark.key}")
-    private String cliInfoRemarkKey;
+    private String cliInfoRemarkKey = RedisKeyEnum.CLIENT_INFO_REMARK.value;
 
+    /**
+     * 设置客户端信息
+     */
     @Override
     public void setClientInfo(String clientId, String clientName, String remark) {
-        this.redisUtils.hset(cliInfoNameKey, clientId, clientName);
-        this.redisUtils.hset(cliInfoRemarkKey, clientId, remark);
+        this.redisOperation.hset(cliInfoNameKey, clientId, clientName);
+        this.redisOperation.hset(cliInfoRemarkKey, clientId, remark);
     }
 
+    /**
+     * 查询当前在线的设备
+     */
     @Override
     public List<ClientTopicInfo> queryCurrentSubscriptions() {
         String url = baseUrl + "nodes/" + node + "/" + "subscriptions";
@@ -53,8 +57,8 @@ public class MqttClientServiceImpl extends BaseService implements MqttClientServ
         List<ClientTopicInfo> clientTopicInfos = JSON.parseArray(dataJson, ClientTopicInfo.class);
 
         for (ClientTopicInfo currentClient : clientTopicInfos) {
-            String cliName = (String) this.redisUtils.hget(cliInfoNameKey, currentClient.getClientId());
-            String cliRemark = (String) this.redisUtils.hget(cliInfoRemarkKey, currentClient.getClientId());
+            String cliName = (String) this.redisOperation.hget(cliInfoNameKey, currentClient.getClientId());
+            String cliRemark = (String) this.redisOperation.hget(cliInfoRemarkKey, currentClient.getClientId());
             currentClient.setClientName(cliName);
             currentClient.setRemark(cliRemark);
         }

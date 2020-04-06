@@ -1,13 +1,13 @@
 package ccuiot.iotc.service.impl;
 
+import ccuiot.iotc.enums.RedisKeyEnum;
 import ccuiot.iotc.mapper.UserMapper;
 import ccuiot.iotc.pojo.User;
 import ccuiot.iotc.pojo.bo.UserBo;
 import ccuiot.iotc.service.UserService;
 import ccuiot.iotc.utils.ApiJsonResult;
-import ccuiot.iotc.utils.LoginAck;
 import ccuiot.iotc.utils.MD5Utils;
-import ccuiot.iotc.utils.RedisUtils;
+import ccuiot.iotc.utils.RedisOperation;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,11 +23,11 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Autowired
-    private RedisUtils redisUtils;
+    private RedisOperation redisOperation;
 
     @Override
     @Transactional(propagation = Propagation.SUPPORTS)
-    public LoginAck userLogin(String username, String password) {
+    public String queryUserForLogin(String username, String password) {
         User user = null;
         try {
             user = new User();
@@ -40,11 +40,9 @@ public class UserServiceImpl implements UserService {
         if (one == null) {
             return null;
         }
-        LoginAck ack = getAck(one);
-
-        redisUtils.set(ack.getCacheKey(), ack.getSecretKey(), 1800);
-
-        return ack;
+        String secretKey = getSecretKey(one);
+        this.redisOperation.set(RedisKeyEnum.USER_KEY.value + ":" + one.getUsername(), secretKey, 1800);
+        return secretKey;
     }
 
     @Override
@@ -101,7 +99,7 @@ public class UserServiceImpl implements UserService {
         return res != null;
     }
 
-    public LoginAck getAck(User user) {
+    public String getSecretKey(User user) {
         String toKey = user.getUsername() + user.getPassword() + new Date() + "#_e%^Z@Q(w#";
         //redis中的key
         String cacheKey = "user:" + user.getId() + "_" + user.getUsername();
@@ -112,7 +110,7 @@ public class UserServiceImpl implements UserService {
             e.printStackTrace();
             return null;
         }
-        return new LoginAck(cacheKey, secretKey, new Date());
+        return secretKey;
     }
 
 }

@@ -1,4 +1,4 @@
-package ccuiot.iotc.config;
+package ccuiot.iotc.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
