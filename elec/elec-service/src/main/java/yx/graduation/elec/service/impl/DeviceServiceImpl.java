@@ -7,8 +7,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import yx.graduation.elec.mapper.DeviceMapper;
+import yx.graduation.elec.mapper.UserMapper;
 import yx.graduation.elec.pojo.Alarm;
 import yx.graduation.elec.pojo.Device;
+import yx.graduation.elec.pojo.User;
 import yx.graduation.elec.pojo.bo.DeviceBo;
 import yx.graduation.elec.pojo.vo.CategoryVo;
 import yx.graduation.elec.pojo.vo.DeviceVo;
@@ -28,6 +30,9 @@ public class DeviceServiceImpl implements DeviceService {
 
     @Autowired
     private CategoryService categoryService;
+
+    @Autowired
+    private UserMapper userMapper;
 
     @Autowired
     private Sid sid;
@@ -74,6 +79,24 @@ public class DeviceServiceImpl implements DeviceService {
     @Transactional(propagation = Propagation.SUPPORTS)
     public List<Device> queryAll() {
         return this.deviceMapper.selectAll();
+    }
+
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public User queryUserByDeviceId(String deviceId) {
+        Device device = this.deviceMapper.selectByPrimaryKey(deviceId);
+        String username = device.getUsername();
+        User user = new User();
+        user.setUsername(username);
+        User res = this.userMapper.selectOne(user);
+        return res;
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public Device queryDeviceById(String deviceId) {
+        return this.deviceMapper.selectByPrimaryKey(deviceId);
     }
 
 }
