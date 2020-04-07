@@ -65,6 +65,14 @@ public class RedisOperator {
     }
 
     /**
+     * 获取keys
+     */
+    public Set<String> getKeys(String key) {
+        Set<String> keys = redisTemplate.keys(key);
+        return keys;
+    }
+
+    /**
      * 删除缓存
      *
      * @param key 可以传一个值 或多个
@@ -191,6 +199,14 @@ public class RedisOperator {
      */
     public Map<Object, Object> hmget(String key) {
         return redisTemplate.opsForHash().entries(key);
+    }
+
+    /**
+     * 获取hash内的所有键
+     */
+    public Set<String> hkeys(String key) {
+        Set<String> keys = redisTemplate.opsForHash().keys(key);
+        return keys;
     }
 
     /**

@@ -7,7 +7,7 @@ public interface UserService {
 
     String queryUserForLogin(String username, String password);
 
-    ApiJsonResult userRegister(UserBo userBo);
+    ApiJsonResult createUser(UserBo userBo);
 
     Boolean checkUsername(String username);
 

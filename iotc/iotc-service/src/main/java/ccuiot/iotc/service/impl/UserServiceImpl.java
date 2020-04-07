@@ -47,7 +47,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
-    public ApiJsonResult userRegister(UserBo userBo) {
+    public ApiJsonResult createUser(UserBo userBo) {
         if (checkUsername(userBo.getUsername())) {
             return ApiJsonResult.errorMsg("用户名已经存在");
         }

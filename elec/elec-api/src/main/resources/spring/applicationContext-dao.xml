@@ -21,6 +21,20 @@
         <property name="typeAliasesPackage" value="yx.graduation.elec.pojo"/>
         <!--<property name="configLocation" value="classpath:mybatis/sqlMapConfig.xml"/>-->
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+        <!--配置mybatis 插件-->
+        <property name="plugins">
+            <set>
+                <!--配置pageHelper 分页插件-->
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <props>
+                            <!--方言：-->
+                            <prop key="helperDialect">mysql</prop>
+                        </props>
+                    </property>
+                </bean>
+            </set>
+        </property>
     </bean>
 
 

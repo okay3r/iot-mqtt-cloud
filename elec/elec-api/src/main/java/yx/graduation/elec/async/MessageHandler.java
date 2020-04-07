@@ -49,8 +49,10 @@ public class MessageHandler {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        //报警值上下限在redis中的key
+
         String deviceId = messageVo.getDeviceId();
+
+        //报警值上下限在redis中的key
         String upKey = RedisKeyEnum.ALARM_UP.value + ":" + deviceId + ":" + messageVo.getParameter();
         String downKey = RedisKeyEnum.ALARM_DOWN.value + ":" + deviceId + ":" + messageVo.getParameter();
 

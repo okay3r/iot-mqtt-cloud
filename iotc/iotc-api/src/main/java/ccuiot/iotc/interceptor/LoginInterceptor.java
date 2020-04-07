@@ -34,9 +34,11 @@ public class LoginInterceptor implements HandlerInterceptor {
             this.redisOperation.expire(key, 1800);
             return true;
         }
-        ApiJsonResult errorMsg = ApiJsonResult.errorMsg("信息错误");
+        ApiJsonResult errorMsg = ApiJsonResult.errorMsg("信息错误，请在请求头中正确填写用户名和登录时返回的秘钥");
         String json = JSON.toJSONString(errorMsg);
-        response.setCharacterEncoding("utf-8");
+
+        response.setContentType("text/plain,charset=gbk");
+        response.setCharacterEncoding("gbk");
         response.getWriter().write(json);
         return false;
     }

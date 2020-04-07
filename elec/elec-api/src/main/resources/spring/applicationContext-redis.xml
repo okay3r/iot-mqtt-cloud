@@ -28,6 +28,7 @@
         <property name="port" value="${redis.port}"></property>
         <property name="password" value="${redis.password}"></property>
         <property name="poolConfig" ref="poolConfig"></property>
+        <property name="database" value="0"/>
     </bean>
 
     <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate"

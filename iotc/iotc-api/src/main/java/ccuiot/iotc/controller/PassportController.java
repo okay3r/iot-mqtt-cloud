@@ -42,7 +42,15 @@ public class PassportController {
     @ApiOperation(value = "用户注册", notes = "用户注册", httpMethod = "POST")
     @PostMapping("/register")
     public ApiJsonResult login(@RequestBody UserBo userBo) {
-        ApiJsonResult registerResult = this.userService.userRegister(userBo);
+        if (StringUtils.isBlank(userBo.getUsername())
+                || StringUtils.isBlank(userBo.getPassword())
+                || StringUtils.isBlank(userBo.getEmail())
+                || StringUtils.isBlank(userBo.getPhone())
+                || StringUtils.isBlank(userBo.getRemark())
+        ) {
+            return ApiJsonResult.errorMsg("参数不全");
+        }
+        ApiJsonResult registerResult = this.userService.createUser(userBo);
         return registerResult;
     }
 
