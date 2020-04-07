@@ -9,6 +9,7 @@ import springfox.documentation.builders.ParameterBuilder;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.schema.ModelRef;
 import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
 import springfox.documentation.service.Parameter;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
@@ -27,10 +28,13 @@ public class SwaggerConfig {
     public Docket api() {
 
         //添加head参数start
-        ParameterBuilder tokenPar = new ParameterBuilder();
+        ParameterBuilder usernameTokenPar = new ParameterBuilder();
+        ParameterBuilder secretKeyTokenPar = new ParameterBuilder();
         List<Parameter> pars = new ArrayList<Parameter>();
-        tokenPar.name("username").description("用户名").modelRef(new ModelRef("string")).parameterType("header").required(false).build();
-        pars.add(tokenPar.build());
+        usernameTokenPar.name("username").description("用户名").modelRef(new ModelRef("string")).parameterType("header").required(false).build();
+        secretKeyTokenPar.name("secretKey").description("秘钥").modelRef(new ModelRef("string")).parameterType("header").required(false).build();
+        pars.add(usernameTokenPar.build());
+        pars.add(secretKeyTokenPar.build());
 
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
@@ -39,14 +43,15 @@ public class SwaggerConfig {
                 .globalOperationParameters(pars)
                 .apiInfo(apiInfo());
     }
+
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("电力设备管理系统项目接口文档")
-                .description("电力设备管理系统项目接口测试")
-                .version("1.0.0")
-                .termsOfServiceUrl("")
-                .license("")
-                .licenseUrl("")
+                .title("电力设备管理系统—api文档")        // 文档页标题
+                .contact(new Contact("021640906杨雪",
+                        "电气工程及其自动化",
+                        "17743170521"))        // 联系人信息
+                .version("1.0.1")   // 文档版本号
+                .termsOfServiceUrl("http://elec.okay3r.top") // 网站地址
                 .build();
     }
 }

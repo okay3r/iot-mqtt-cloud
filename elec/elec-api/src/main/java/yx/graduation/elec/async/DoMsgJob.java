@@ -68,12 +68,11 @@ public class DoMsgJob {
                 // {"deviceId":"20040200PC9F4A3C","msg":"35","parameter":"dianya"}
                 LOGGER.info(host + "===" + message);
                 MessageVo messageVo = JSON.parseObject(message, MessageVo.class);
-                //TODO 报警
                 messageVo.setHost(host);
-                // this.dataRecordService.handleMessage(messageVo);
+
                 this.messageHandler.handleMsg(messageVo);
             } catch (Exception e) {
-                e.printStackTrace();
+                // e.printStackTrace();
                 LOGGER.error("存储消息异常：" + message);
             }
         }

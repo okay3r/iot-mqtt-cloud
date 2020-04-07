@@ -9,9 +9,9 @@ import java.util.List;
 public class CreateJson {
     public static void main(String[] args) {
         MessageVo messageVo = new MessageVo();
-        messageVo.setMsg("170");
-        messageVo.setDeviceId("200406B1N7SY344H");
-        messageVo.setParameter("dianliu");
+        messageVo.setMsg("480");
+        messageVo.setDeviceId("200407A81KCFHKKP");
+        messageVo.setParameter("dianya");
         String s = JSON.toJSONString(messageVo);
         System.out.println(s);
         String to = "{\"deviceId\":\"dianji\",\"msg\":\"888\",\"parameter\":\"tem\"}\n";
@@ -19,7 +19,7 @@ public class CreateJson {
         System.out.println(vo);
 
         List<String> list = new ArrayList<>();
-        list.add("200406B1N7SY344H");
+        list.add("200407A81KCFHKKP");
 
         System.out.println(JSON.toJSONString(list));
     }

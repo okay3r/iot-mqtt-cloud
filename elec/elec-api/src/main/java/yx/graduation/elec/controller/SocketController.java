@@ -29,7 +29,30 @@ public class SocketController {
     @ApiOperation(value = "开启socket", notes = "开启socket", httpMethod = "GET")
     @GetMapping("/openSocket")
     public ApiJsonResult openSocket() throws InterruptedException {
+        AsynTaskBean.controlServerSocket = true;
         asynTaskBean.handleConn();
+        return ApiJsonResult.ok();
+    }
+
+    /**
+     * 关闭socket
+     */
+    @ApiOperation(value = "关闭socket", notes = "关闭socket", httpMethod = "GET")
+    @GetMapping("/closeSocket")
+    public ApiJsonResult closeSocket() {
+        AsynTaskBean.controlServerSocket = false;
+        try {
+            if (AsynTaskBean.serverSocket == null || AsynTaskBean.serverSocket.isClosed()) {
+                return ApiJsonResult.errorMsg("ServerSocket尚未开启");
+            } else {
+                AsynTaskBean.serverSocket.close();
+            }
+        } catch (IOException e) {
+            return ApiJsonResult.errorMsg("关闭ServerSocket异常");
+        }
+        for (String currentConnHost : AsynTaskBean.getCurrentConns()) {
+            AsynTaskBean.closeConn(currentConnHost);
+        }
         return ApiJsonResult.ok();
     }
 

@@ -42,21 +42,27 @@ public class AsynTaskBean {
      */
     private static Map<String, List<String>> hostDeviceMap = new HashMap<>();
 
+    public static boolean controlServerSocket = true;
+
+    public static ServerSocket serverSocket;
 
     /**
      * 处理新的连接
      */
     @Async("connTaskExecutor")
     public void handleConn() {
-        ServerSocket serverSocket = null;
         try {
             serverSocket = new ServerSocket(9988);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        while (true) {
+        while (controlServerSocket) {
             try {
                 Socket socket = serverSocket.accept();
+                if (!controlServerSocket) {
+                    serverSocket.close();
+                    return;
+                }
                 InetAddress address = socket.getInetAddress();
                 LOGGER.info(address + "建立连接");
                 connMap.put(address.toString(), socket);
@@ -65,13 +71,11 @@ public class AsynTaskBean {
                 // new Thread(new DeviceHandler(socket, dataRecordService)).start();
                 doMsgJob.doJob(socket);
             } catch (IOException e) {
-                e.printStackTrace();
+                LOGGER.error("ServerSocket异常");
+                // e.printStackTrace();
             }
         }
     }
-
-
-
 
 
     public static Set<String> getCurrentConns() {

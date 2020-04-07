@@ -67,11 +67,10 @@ public class DeviceController {
             this.redisOperator.set(RedisKeyEnum.DEVICE_KV.value + ":" + device.getId(), device.getDeviceName());
 
             //设备列表变更，清除对应的redis数据
-            this.redisOperator.del(RedisKeyEnum.DEVICE_LIST.value + ":" + username);
+            this.redisOperator.del(RedisKeyEnum.DEVICE_LIST.value);
         }
         return result;
     }
-
 
     /**
      * 设置报警值

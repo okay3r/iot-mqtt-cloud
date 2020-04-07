@@ -37,8 +37,10 @@ public class LoginInterceptor implements HandlerInterceptor {
         ApiJsonResult errorMsg = ApiJsonResult.errorMsg("信息错误，请在请求头中正确填写用户名和登录时返回的秘钥");
         String json = JSON.toJSONString(errorMsg);
 
-        response.setContentType("text/plain,charset=gbk");
-        response.setCharacterEncoding("gbk");
+        response.setHeader("Content-type", "text/html;charset=UTF-8");
+        response.setContentType("text/plain,charset=utf-8");
+        response.setCharacterEncoding("utf-8");
+
         response.getWriter().write(json);
         return false;
     }

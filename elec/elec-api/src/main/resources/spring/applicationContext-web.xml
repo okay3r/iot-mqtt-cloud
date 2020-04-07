@@ -54,6 +54,7 @@
             <mvc:exclude-mapping path="/swagger-ui.html/**" />
             <mvc:exclude-mapping path="/doc.html/**" />
             <mvc:exclude-mapping path="/gen/**" />
+            <mvc:exclude-mapping path="/hello/**" />
             <bean class="yx.graduation.elec.interceptor.LoginInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>

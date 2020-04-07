@@ -20,8 +20,8 @@ public class LoginInterceptor implements HandlerInterceptor {
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        /*String username = request.getHeader("username");
-        String secret = request.getHeader("secret");
+        String username = request.getHeader("username");
+        String secret = request.getHeader("secretKey");
         response.setContentType("text/plain;charset=gbk");
         response.setCharacterEncoding("gbk");
         if (StringUtils.isBlank(username) || StringUtils.isBlank(secret)) {
@@ -32,7 +32,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         if (!secret.equals(redisSecret)) {
             response.getWriter().write(JSON.toJSONString(ApiJsonResult.errorMsg("username或secret错误")));
             return false;
-        }*/
+        }
         return true;
     }
 }

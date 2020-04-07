@@ -4,6 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.support.SimpleTriggerContext;
 import org.springframework.stereotype.Component;
@@ -35,6 +36,9 @@ public class MessageHandler {
     private EmailService emailService;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MessageHandler.class);
+
+    @Value("${email.alarmTime}")
+    private Integer alarmTime;
 
 
     /**
@@ -79,7 +83,7 @@ public class MessageHandler {
             Object has = this.redisOperator.get(hasAlarm);
             if (has == null) {
                 LOGGER.warn("设备" + deviceId + "发生异常！  " + messageVo.getParameter() + " = " + value);
-                this.redisOperator.set(hasAlarm, messageVo.getMsg(), 10);
+                this.redisOperator.set(hasAlarm, messageVo.getMsg(), alarmTime);
 
                 User user = this.deviceService.queryUserByDeviceId(deviceId);
                 if (user != null && user.getEmail() != null) {
