@@ -1,0 +1,26 @@
+emqx:
+  address: tcp://47.93.10.179:1883
+  username: admin
+  password: admin
+  clientId: iotc-go-cli
+  topic:
+    topicList: iotc/#
+    qosList: 2
+
+rabbitmq:
+  address: 127.0.0.1:5672
+  username: admin
+  password: admin
+  virtual-host: /
+  exchange:
+    name: iot-mqtt-exchange
+    kind: topic
+    durable: false
+    autoDelete: false
+    internal: false
+    noWait: false
+  publish:
+    basicKey: iotmqtt
+    mandatory: false
+    immediate: false
+    contentType: text/plain
