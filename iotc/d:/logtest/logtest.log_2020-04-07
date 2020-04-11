@@ -1,0 +1,512 @@
+2020-04-07 11:33:05,794  INFO background-preinit (org.hibernate.validator.internal.util.Version.<clinit>:21) - HV000001: Hibernate Validator 6.0.16.Final
+2020-04-07 11:33:06,121  INFO main (ccuiot.iotc.Application.logStarting:50) - Starting Application on MacBook-Pro with PID 16534 (/Users/okay3r/Documents/workSpace/IoT_Cloud/iotc/iotc-api/target/classes started by okay3r in /Users/okay3r/Documents/workSpace/IoT_Cloud/iotc)
+2020-04-07 11:33:06,121  INFO main (ccuiot.iotc.Application.logStartupProfileInfo:679) - The following profiles are active: prod
+2020-04-07 11:33:07,459  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:244) - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-07 11:33:07,463  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:126) - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-07 11:33:07,495  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:182) - Finished Spring Data repository scanning in 18ms. Found 0 repository interfaces.
+2020-04-07 11:33:07,604  WARN main (org.mybatis.spring.mapper.ClassPathMapperScanner.warn:44) - No MyBatis mapper was found in '[ccuiot.iotc]' package. Please check your configuration.
+2020-04-07 11:33:07,928  INFO main (org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e005939d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-07 11:33:08,108  WARN main (org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext.refresh:557) - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+2020-04-07 11:33:08,118  INFO main (org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener.logMessage:142) - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-04-07 11:33:08,126 ERROR main (org.springframework.boot.SpringApplication.reportFailure:858) - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:157)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at ccuiot.iotc.Application.main(Application.java:13)
+Caused by: org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getWebServerFactory(ServletWebServerApplicationContext.java:206)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:154)
+	... 8 more
+2020-04-07 11:33:43,754  INFO background-preinit (org.hibernate.validator.internal.util.Version.<clinit>:21) - HV000001: Hibernate Validator 6.0.16.Final
+2020-04-07 11:33:44,159  INFO main (ccuiot.iotc.Application.logStarting:50) - Starting Application on MacBook-Pro with PID 16553 (/Users/okay3r/Documents/workSpace/IoT_Cloud/iotc/iotc-api/target/classes started by okay3r in /Users/okay3r/Documents/workSpace/IoT_Cloud/iotc)
+2020-04-07 11:33:44,159  INFO main (ccuiot.iotc.Application.logStartupProfileInfo:679) - The following profiles are active: dev
+2020-04-07 11:33:45,599  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:244) - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-07 11:33:45,604  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:126) - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-07 11:33:45,648  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:182) - Finished Spring Data repository scanning in 26ms. Found 0 repository interfaces.
+2020-04-07 11:33:45,812  WARN main (org.mybatis.spring.mapper.ClassPathMapperScanner.warn:44) - No MyBatis mapper was found in '[ccuiot.iotc]' package. Please check your configuration.
+2020-04-07 11:33:46,325  INFO main (org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$851e3519] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-07 11:33:46,603  WARN main (org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext.refresh:557) - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+2020-04-07 11:33:46,619  INFO main (org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener.logMessage:142) - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-04-07 11:33:46,630 ERROR main (org.springframework.boot.SpringApplication.reportFailure:858) - Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:157)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at ccuiot.iotc.Application.main(Application.java:13)
+Caused by: org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getWebServerFactory(ServletWebServerApplicationContext.java:206)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:154)
+	... 8 more
+2020-04-07 11:34:07,822  INFO background-preinit (org.hibernate.validator.internal.util.Version.<clinit>:21) - HV000001: Hibernate Validator 6.0.16.Final
+2020-04-07 11:34:08,175  INFO main (ccuiot.iotc.Application.logStarting:50) - Starting Application on MacBook-Pro with PID 16566 (/Users/okay3r/Documents/workSpace/IoT_Cloud/iotc/iotc-api/target/classes started by okay3r in /Users/okay3r/Documents/workSpace/IoT_Cloud/iotc)
+2020-04-07 11:34:08,175  INFO main (ccuiot.iotc.Application.logStartupProfileInfo:679) - The following profiles are active: dev
+2020-04-07 11:34:09,403  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:244) - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-07 11:34:09,406  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:126) - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-07 11:34:09,432  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:182) - Finished Spring Data repository scanning in 14ms. Found 0 repository interfaces.
+2020-04-07 11:34:09,530  WARN main (org.mybatis.spring.mapper.ClassPathMapperScanner.warn:44) - No MyBatis mapper was found in '[ccuiot.iotc]' package. Please check your configuration.
+2020-04-07 11:34:09,875  INFO main (org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$38385643] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-07 11:34:10,363  INFO main (org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize:90) - Tomcat initialized with port(s): 8180 (http)
+2020-04-07 11:34:10,620  INFO main (org.springframework.web.context.ContextLoader.prepareWebApplicationContext:296) - Root WebApplicationContext: initialization completed in 2383 ms
+2020-04-07 11:34:12,962  INFO main (org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver.<init>:59) - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-04-07 11:34:13,063  INFO main (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:171) - Initializing ExecutorService
+2020-04-07 11:34:13,065  INFO main (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:171) - Initializing ExecutorService 'transferTaskExecutor'
+2020-04-07 11:34:13,587  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-07 11:34:13,588  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-07 11:34:13,588  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-07 11:34:13,589  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache:83) - Clear EntityHelper entityTableMap cache.
+2020-04-07 11:34:14,275  INFO main (org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareConnection:460) - Attempting to connect to: [192.168.38.131:5672]
+2020-04-07 11:34:14,314  INFO main (org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareConnection:496) - Created new connection: rabbitConnectionFactory#5835e24a:0/SimpleConnection@54b96813 [delegate=amqp://admin@192.168.38.131:5672/, localPort= 50760]
+2020-04-07 11:34:14,322  INFO main (org.springframework.amqp.rabbit.core.RabbitAdmin.initialize:568) - Auto-declaring a non-durable or auto-delete Exchange (iot-mqtt-exchange) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2020-04-07 11:34:14,382  INFO main (springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.onApplicationEvent:84) - Context refreshed
+2020-04-07 11:34:14,405  INFO main (springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.onApplicationEvent:87) - Found 1 custom documentation plugin(s)
+2020-04-07 11:34:14,415  INFO main (springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan:44) - Scanning for api listing references
+2020-04-07 11:34:14,615  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: listUsingGET_1
+2020-04-07 11:34:14,618  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: queryByTimeUsingGET_1
+2020-04-07 11:34:14,620  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: queryByTopicUsingGET_1
+2020-04-07 11:34:14,623  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_1
+2020-04-07 11:34:14,624  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_2
+2020-04-07 11:34:14,625  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_3
+2020-04-07 11:34:14,628  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: loginUsingPOST_1
+2020-04-07 11:34:14,634  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: loginUsingPOST_2
+2020-04-07 11:34:14,693  INFO main (org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start:204) - Tomcat started on port(s): 8180 (http) with context path '/iotc'
+2020-04-07 11:34:14,697  INFO main (ccuiot.iotc.Application.logStarted:59) - Started Application in 6.981 seconds (JVM running for 7.652)
+2020-04-07 11:34:30,813  INFO http-nio-8180-exec-1 (org.springframework.web.servlet.DispatcherServlet.initServletBean:524) - Initializing Servlet 'dispatcherServlet'
+2020-04-07 11:34:30,836  INFO http-nio-8180-exec-1 (org.springframework.web.servlet.DispatcherServlet.initServletBean:546) - Completed initialization in 22 ms
+2020-04-07 11:34:30,859  INFO http-nio-8180-exec-1 (ccuiot.iotc.interceptor.LoginInterceptor.preHandle:30) - 校验秘钥 null = null
+2020-04-07 11:34:31,191  INFO http-nio-8180-exec-1 (io.lettuce.core.EpollProvider.<clinit>:68) - Starting without optional epoll library
+2020-04-07 11:34:31,194  INFO http-nio-8180-exec-1 (io.lettuce.core.KqueueProvider.<clinit>:70) - Starting without optional kqueue library
+2020-04-07 11:34:33,642  INFO http-nio-8180-exec-2 (ccuiot.iotc.interceptor.LoginInterceptor.preHandle:30) - 校验秘钥 null = null
+2020-04-07 11:34:58,431  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown:586) - Waiting for workers to finish.
+2020-04-07 11:34:58,501  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown:589) - Successfully waited for workers to finish.
+2020-04-07 11:34:58,506  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.shutdown:1226) - Shutdown ignored - container is not active already
+2020-04-07 11:34:58,507  INFO Thread-4 (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:208) - Shutting down ExecutorService 'transferTaskExecutor'
+2020-04-07 11:35:03,413  INFO background-preinit (org.hibernate.validator.internal.util.Version.<clinit>:21) - HV000001: Hibernate Validator 6.0.16.Final
+2020-04-07 11:35:03,763  INFO main (ccuiot.iotc.Application.logStarting:50) - Starting Application on MacBook-Pro with PID 16575 (/Users/okay3r/Documents/workSpace/IoT_Cloud/iotc/iotc-api/target/classes started by okay3r in /Users/okay3r/Documents/workSpace/IoT_Cloud/iotc)
+2020-04-07 11:35:03,765  INFO main (ccuiot.iotc.Application.logStartupProfileInfo:679) - The following profiles are active: dev
+2020-04-07 11:35:04,988  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:244) - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-07 11:35:04,992  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:126) - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-07 11:35:05,024  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:182) - Finished Spring Data repository scanning in 17ms. Found 0 repository interfaces.
+2020-04-07 11:35:05,117  WARN main (org.mybatis.spring.mapper.ClassPathMapperScanner.warn:44) - No MyBatis mapper was found in '[ccuiot.iotc]' package. Please check your configuration.
+2020-04-07 11:35:05,454  INFO main (org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$25c2b498] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-07 11:35:05,855  INFO main (org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize:90) - Tomcat initialized with port(s): 8180 (http)
+2020-04-07 11:35:06,042  INFO main (org.springframework.web.context.ContextLoader.prepareWebApplicationContext:296) - Root WebApplicationContext: initialization completed in 2216 ms
+2020-04-07 11:35:08,184  INFO main (org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver.<init>:59) - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-04-07 11:35:08,271  INFO main (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:171) - Initializing ExecutorService
+2020-04-07 11:35:08,272  INFO main (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:171) - Initializing ExecutorService 'transferTaskExecutor'
+2020-04-07 11:35:08,709  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-07 11:35:08,709  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-07 11:35:08,710  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-07 11:35:08,711  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache:83) - Clear EntityHelper entityTableMap cache.
+2020-04-07 11:35:09,322  INFO main (org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareConnection:460) - Attempting to connect to: [192.168.38.131:5672]
+2020-04-07 11:35:09,357  INFO main (org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareConnection:496) - Created new connection: rabbitConnectionFactory#74d22ddd:0/SimpleConnection@688efeb2 [delegate=amqp://admin@192.168.38.131:5672/, localPort= 50805]
+2020-04-07 11:35:09,364  INFO main (org.springframework.amqp.rabbit.core.RabbitAdmin.initialize:568) - Auto-declaring a non-durable or auto-delete Exchange (iot-mqtt-exchange) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2020-04-07 11:35:09,416  INFO main (springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.onApplicationEvent:84) - Context refreshed
+2020-04-07 11:35:09,431  INFO main (springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.onApplicationEvent:87) - Found 1 custom documentation plugin(s)
+2020-04-07 11:35:09,441  INFO main (springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan:44) - Scanning for api listing references
+2020-04-07 11:35:09,608  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: listUsingGET_1
+2020-04-07 11:35:09,617  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: queryByTimeUsingGET_1
+2020-04-07 11:35:09,620  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: queryByTopicUsingGET_1
+2020-04-07 11:35:09,624  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_1
+2020-04-07 11:35:09,625  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_2
+2020-04-07 11:35:09,627  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_3
+2020-04-07 11:35:09,630  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: loginUsingPOST_1
+2020-04-07 11:35:09,638  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: loginUsingPOST_2
+2020-04-07 11:35:09,688  INFO main (org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start:204) - Tomcat started on port(s): 8180 (http) with context path '/iotc'
+2020-04-07 11:35:09,691  INFO main (ccuiot.iotc.Application.logStarted:59) - Started Application in 6.39 seconds (JVM running for 7.109)
+2020-04-07 11:35:20,046  INFO http-nio-8180-exec-1 (org.springframework.web.servlet.DispatcherServlet.initServletBean:524) - Initializing Servlet 'dispatcherServlet'
+2020-04-07 11:35:20,062  INFO http-nio-8180-exec-1 (org.springframework.web.servlet.DispatcherServlet.initServletBean:546) - Completed initialization in 15 ms
+2020-04-07 11:35:20,082  INFO http-nio-8180-exec-1 (ccuiot.iotc.interceptor.LoginInterceptor.preHandle:30) - 校验秘钥 null = null
+2020-04-07 11:35:20,407  INFO http-nio-8180-exec-1 (io.lettuce.core.EpollProvider.<clinit>:68) - Starting without optional epoll library
+2020-04-07 11:35:20,408  INFO http-nio-8180-exec-1 (io.lettuce.core.KqueueProvider.<clinit>:70) - Starting without optional kqueue library
+2020-04-07 11:35:50,900  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown:586) - Waiting for workers to finish.
+2020-04-07 11:35:51,539  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown:589) - Successfully waited for workers to finish.
+2020-04-07 11:35:51,545  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.shutdown:1226) - Shutdown ignored - container is not active already
+2020-04-07 11:35:51,547  INFO Thread-4 (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:208) - Shutting down ExecutorService 'transferTaskExecutor'
+2020-04-07 11:35:56,485  INFO background-preinit (org.hibernate.validator.internal.util.Version.<clinit>:21) - HV000001: Hibernate Validator 6.0.16.Final
+2020-04-07 11:35:56,818  INFO main (ccuiot.iotc.Application.logStarting:50) - Starting Application on MacBook-Pro with PID 16584 (/Users/okay3r/Documents/workSpace/IoT_Cloud/iotc/iotc-api/target/classes started by okay3r in /Users/okay3r/Documents/workSpace/IoT_Cloud/iotc)
+2020-04-07 11:35:56,819  INFO main (ccuiot.iotc.Application.logStartupProfileInfo:679) - The following profiles are active: dev
+2020-04-07 11:35:57,964  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:244) - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-07 11:35:57,967  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:126) - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-07 11:35:58,000  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:182) - Finished Spring Data repository scanning in 20ms. Found 0 repository interfaces.
+2020-04-07 11:35:58,116  WARN main (org.mybatis.spring.mapper.ClassPathMapperScanner.warn:44) - No MyBatis mapper was found in '[ccuiot.iotc]' package. Please check your configuration.
+2020-04-07 11:35:58,453  INFO main (org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$39e63af4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-07 11:35:58,853  INFO main (org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize:90) - Tomcat initialized with port(s): 8180 (http)
+2020-04-07 11:35:59,026  INFO main (org.springframework.web.context.ContextLoader.prepareWebApplicationContext:296) - Root WebApplicationContext: initialization completed in 2155 ms
+2020-04-07 11:36:01,163  INFO main (org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver.<init>:59) - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-04-07 11:36:01,247  INFO main (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:171) - Initializing ExecutorService
+2020-04-07 11:36:01,249  INFO main (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:171) - Initializing ExecutorService 'transferTaskExecutor'
+2020-04-07 11:36:01,647  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-07 11:36:01,647  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-07 11:36:01,648  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-07 11:36:01,649  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache:83) - Clear EntityHelper entityTableMap cache.
+2020-04-07 11:36:02,296  INFO main (org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareConnection:460) - Attempting to connect to: [192.168.38.131:5672]
+2020-04-07 11:36:02,329  INFO main (org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareConnection:496) - Created new connection: rabbitConnectionFactory#56835f2f:0/SimpleConnection@5f5c0eda [delegate=amqp://admin@192.168.38.131:5672/, localPort= 50867]
+2020-04-07 11:36:02,336  INFO main (org.springframework.amqp.rabbit.core.RabbitAdmin.initialize:568) - Auto-declaring a non-durable or auto-delete Exchange (iot-mqtt-exchange) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2020-04-07 11:36:02,400  INFO main (springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.onApplicationEvent:84) - Context refreshed
+2020-04-07 11:36:02,416  INFO main (springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.onApplicationEvent:87) - Found 1 custom documentation plugin(s)
+2020-04-07 11:36:02,426  INFO main (springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan:44) - Scanning for api listing references
+2020-04-07 11:36:02,575  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: listUsingGET_1
+2020-04-07 11:36:02,579  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: queryByTimeUsingGET_1
+2020-04-07 11:36:02,581  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: queryByTopicUsingGET_1
+2020-04-07 11:36:02,584  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_1
+2020-04-07 11:36:02,587  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_2
+2020-04-07 11:36:02,589  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_3
+2020-04-07 11:36:02,592  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: loginUsingPOST_1
+2020-04-07 11:36:02,600  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: loginUsingPOST_2
+2020-04-07 11:36:02,649  INFO main (org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start:204) - Tomcat started on port(s): 8180 (http) with context path '/iotc'
+2020-04-07 11:36:02,652  INFO main (ccuiot.iotc.Application.logStarted:59) - Started Application in 6.292 seconds (JVM running for 7.124)
+2020-04-07 11:36:06,640  INFO http-nio-8180-exec-1 (org.springframework.web.servlet.DispatcherServlet.initServletBean:524) - Initializing Servlet 'dispatcherServlet'
+2020-04-07 11:36:06,654  INFO http-nio-8180-exec-1 (org.springframework.web.servlet.DispatcherServlet.initServletBean:546) - Completed initialization in 14 ms
+2020-04-07 11:36:06,674  INFO http-nio-8180-exec-1 (ccuiot.iotc.interceptor.LoginInterceptor.preHandle:30) - 校验秘钥 null = null
+2020-04-07 11:36:06,767  INFO http-nio-8180-exec-1 (io.lettuce.core.EpollProvider.<clinit>:68) - Starting without optional epoll library
+2020-04-07 11:36:06,769  INFO http-nio-8180-exec-1 (io.lettuce.core.KqueueProvider.<clinit>:70) - Starting without optional kqueue library
+2020-04-07 11:37:08,446  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown:586) - Waiting for workers to finish.
+2020-04-07 11:37:08,587  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown:589) - Successfully waited for workers to finish.
+2020-04-07 11:37:08,592  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.shutdown:1226) - Shutdown ignored - container is not active already
+2020-04-07 11:37:08,594  INFO Thread-4 (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:208) - Shutting down ExecutorService 'transferTaskExecutor'
+2020-04-07 11:37:13,426  INFO background-preinit (org.hibernate.validator.internal.util.Version.<clinit>:21) - HV000001: Hibernate Validator 6.0.16.Final
+2020-04-07 11:37:13,707  INFO main (ccuiot.iotc.Application.logStarting:50) - Starting Application on MacBook-Pro with PID 16589 (/Users/okay3r/Documents/workSpace/IoT_Cloud/iotc/iotc-api/target/classes started by okay3r in /Users/okay3r/Documents/workSpace/IoT_Cloud/iotc)
+2020-04-07 11:37:13,708  INFO main (ccuiot.iotc.Application.logStartupProfileInfo:679) - The following profiles are active: dev
+2020-04-07 11:37:14,907  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:244) - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-07 11:37:14,909  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:126) - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-07 11:37:14,936  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:182) - Finished Spring Data repository scanning in 17ms. Found 0 repository interfaces.
+2020-04-07 11:37:15,053  WARN main (org.mybatis.spring.mapper.ClassPathMapperScanner.warn:44) - No MyBatis mapper was found in '[ccuiot.iotc]' package. Please check your configuration.
+2020-04-07 11:37:15,396  INFO main (org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$77eada56] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-07 11:37:15,792  INFO main (org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize:90) - Tomcat initialized with port(s): 8180 (http)
+2020-04-07 11:37:15,974  INFO main (org.springframework.web.context.ContextLoader.prepareWebApplicationContext:296) - Root WebApplicationContext: initialization completed in 2210 ms
+2020-04-07 11:37:18,033  INFO main (org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver.<init>:59) - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-04-07 11:37:18,116  INFO main (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:171) - Initializing ExecutorService
+2020-04-07 11:37:18,117  INFO main (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:171) - Initializing ExecutorService 'transferTaskExecutor'
+2020-04-07 11:37:18,546  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-07 11:37:18,547  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-07 11:37:18,547  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-07 11:37:18,548  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache:83) - Clear EntityHelper entityTableMap cache.
+2020-04-07 11:37:19,157  INFO main (org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareConnection:460) - Attempting to connect to: [192.168.38.131:5672]
+2020-04-07 11:37:19,191  INFO main (org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareConnection:496) - Created new connection: rabbitConnectionFactory#7eee6c13:0/SimpleConnection@65fa4a07 [delegate=amqp://admin@192.168.38.131:5672/, localPort= 50926]
+2020-04-07 11:37:19,197  INFO main (org.springframework.amqp.rabbit.core.RabbitAdmin.initialize:568) - Auto-declaring a non-durable or auto-delete Exchange (iot-mqtt-exchange) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2020-04-07 11:37:19,249  INFO main (springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.onApplicationEvent:84) - Context refreshed
+2020-04-07 11:37:19,263  INFO main (springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.onApplicationEvent:87) - Found 1 custom documentation plugin(s)
+2020-04-07 11:37:19,273  INFO main (springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan:44) - Scanning for api listing references
+2020-04-07 11:37:19,423  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: listUsingGET_1
+2020-04-07 11:37:19,426  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: queryByTimeUsingGET_1
+2020-04-07 11:37:19,428  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: queryByTopicUsingGET_1
+2020-04-07 11:37:19,431  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_1
+2020-04-07 11:37:19,432  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_2
+2020-04-07 11:37:19,434  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_3
+2020-04-07 11:37:19,437  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: loginUsingPOST_1
+2020-04-07 11:37:19,447  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: loginUsingPOST_2
+2020-04-07 11:37:19,499  INFO main (org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start:204) - Tomcat started on port(s): 8180 (http) with context path '/iotc'
+2020-04-07 11:37:19,502  INFO main (ccuiot.iotc.Application.logStarted:59) - Started Application in 6.175 seconds (JVM running for 6.891)
+2020-04-07 11:37:23,415  INFO http-nio-8180-exec-1 (org.springframework.web.servlet.DispatcherServlet.initServletBean:524) - Initializing Servlet 'dispatcherServlet'
+2020-04-07 11:37:23,429  INFO http-nio-8180-exec-1 (org.springframework.web.servlet.DispatcherServlet.initServletBean:546) - Completed initialization in 14 ms
+2020-04-07 11:37:23,447  INFO http-nio-8180-exec-1 (ccuiot.iotc.interceptor.LoginInterceptor.preHandle:30) - 校验秘钥 null = null
+2020-04-07 11:37:23,706  INFO http-nio-8180-exec-1 (io.lettuce.core.EpollProvider.<clinit>:68) - Starting without optional epoll library
+2020-04-07 11:37:23,708  INFO http-nio-8180-exec-1 (io.lettuce.core.KqueueProvider.<clinit>:70) - Starting without optional kqueue library
+2020-04-07 11:39:27,287  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown:586) - Waiting for workers to finish.
+2020-04-07 11:39:27,609  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown:589) - Successfully waited for workers to finish.
+2020-04-07 11:39:27,620  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.shutdown:1226) - Shutdown ignored - container is not active already
+2020-04-07 11:39:27,623  INFO Thread-4 (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:208) - Shutting down ExecutorService 'transferTaskExecutor'
+2020-04-07 22:43:38,662  INFO background-preinit (org.hibernate.validator.internal.util.Version.<clinit>:21) - HV000001: Hibernate Validator 6.0.16.Final
+2020-04-07 22:43:39,048  INFO main (ccuiot.iotc.Application.logStarting:50) - Starting Application on MacBook-Pro with PID 20224 (/Users/okay3r/Documents/workSpace/IoT_Cloud/iotc/iotc-api/target/classes started by okay3r in /Users/okay3r/Documents/workSpace/IoT_Cloud/iotc)
+2020-04-07 22:43:39,048  INFO main (ccuiot.iotc.Application.logStartupProfileInfo:679) - The following profiles are active: dev
+2020-04-07 22:43:40,463  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:244) - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-07 22:43:40,466  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:126) - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-07 22:43:40,498  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:182) - Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2020-04-07 22:43:40,613  WARN main (org.mybatis.spring.mapper.ClassPathMapperScanner.warn:44) - No MyBatis mapper was found in '[ccuiot.iotc]' package. Please check your configuration.
+2020-04-07 22:43:40,963  INFO main (org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6d0b7af2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-07 22:43:41,467  INFO main (org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize:90) - Tomcat initialized with port(s): 8180 (http)
+2020-04-07 22:43:41,687  INFO main (org.springframework.web.context.ContextLoader.prepareWebApplicationContext:296) - Root WebApplicationContext: initialization completed in 2553 ms
+2020-04-07 22:43:44,708  INFO main (org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver.<init>:59) - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-04-07 22:43:44,799  INFO main (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:171) - Initializing ExecutorService
+2020-04-07 22:43:44,801  INFO main (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:171) - Initializing ExecutorService 'transferTaskExecutor'
+2020-04-07 22:43:45,238  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-07 22:43:45,238  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-07 22:43:45,239  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-07 22:43:45,240  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache:83) - Clear EntityHelper entityTableMap cache.
+2020-04-07 22:43:45,964  INFO main (org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareConnection:460) - Attempting to connect to: [192.168.38.131:5672]
+2020-04-07 22:43:46,002  INFO main (org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareConnection:496) - Created new connection: rabbitConnectionFactory#ec5f944:0/SimpleConnection@2831c178 [delegate=amqp://admin@192.168.38.131:5672/, localPort= 52921]
+2020-04-07 22:43:46,011  INFO main (org.springframework.amqp.rabbit.core.RabbitAdmin.initialize:568) - Auto-declaring a non-durable or auto-delete Exchange (iot-mqtt-exchange) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2020-04-07 22:43:46,069  INFO main (springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.onApplicationEvent:84) - Context refreshed
+2020-04-07 22:43:46,089  INFO main (springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.onApplicationEvent:87) - Found 1 custom documentation plugin(s)
+2020-04-07 22:43:46,100  INFO main (springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan:44) - Scanning for api listing references
+2020-04-07 22:43:46,260  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: listUsingGET_1
+2020-04-07 22:43:46,264  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: queryByTimeUsingGET_1
+2020-04-07 22:43:46,267  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: queryByTopicUsingGET_1
+2020-04-07 22:43:46,270  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_1
+2020-04-07 22:43:46,272  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_2
+2020-04-07 22:43:46,273  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_3
+2020-04-07 22:43:46,277  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: loginUsingPOST_1
+2020-04-07 22:43:46,287  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: loginUsingPOST_2
+2020-04-07 22:43:46,346  INFO main (org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start:204) - Tomcat started on port(s): 8180 (http) with context path '/iotc'
+2020-04-07 22:43:46,349  INFO main (ccuiot.iotc.Application.logStarted:59) - Started Application in 7.802 seconds (JVM running for 8.639)
+2020-04-07 22:44:22,975  INFO http-nio-8180-exec-1 (org.springframework.web.servlet.DispatcherServlet.initServletBean:524) - Initializing Servlet 'dispatcherServlet'
+2020-04-07 22:44:22,990  INFO http-nio-8180-exec-1 (org.springframework.web.servlet.DispatcherServlet.initServletBean:546) - Completed initialization in 14 ms
+2020-04-07 22:44:43,556  INFO http-nio-8180-exec-5 (ccuiot.iotc.aspect.WebLogAspect.doBefore:42) - REQUEST :  GET @ http://localhost:8180/iotc/hello [ccuiot.iotc.controller.TemplateController.login] [ARGS : []]
+2020-04-07 22:44:43,559  INFO http-nio-8180-exec-5 (ccuiot.iotc.aspect.WebLogAspect.doAfterReturning:49) - RESPONSE : ccuiot.iotc.utils.ApiJsonResult@544f6c48
+2020-04-07 22:44:48,518  INFO http-nio-8180-exec-6 (ccuiot.iotc.interceptor.LoginInterceptor.preHandle:30) - 校验秘钥 null = null
+2020-04-07 22:44:48,637  INFO http-nio-8180-exec-6 (io.lettuce.core.EpollProvider.<clinit>:68) - Starting without optional epoll library
+2020-04-07 22:44:48,639  INFO http-nio-8180-exec-6 (io.lettuce.core.KqueueProvider.<clinit>:70) - Starting without optional kqueue library
+2020-04-07 22:46:17,183  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown:586) - Waiting for workers to finish.
+2020-04-07 22:46:17,519  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown:589) - Successfully waited for workers to finish.
+2020-04-07 22:46:17,535  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.shutdown:1226) - Shutdown ignored - container is not active already
+2020-04-07 22:46:17,539  INFO Thread-4 (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:208) - Shutting down ExecutorService 'transferTaskExecutor'
+2020-04-07 22:46:22,721  INFO background-preinit (org.hibernate.validator.internal.util.Version.<clinit>:21) - HV000001: Hibernate Validator 6.0.16.Final
+2020-04-07 22:46:23,003  INFO main (ccuiot.iotc.Application.logStarting:50) - Starting Application on MacBook-Pro with PID 20245 (/Users/okay3r/Documents/workSpace/IoT_Cloud/iotc/iotc-api/target/classes started by okay3r in /Users/okay3r/Documents/workSpace/IoT_Cloud/iotc)
+2020-04-07 22:46:23,004  INFO main (ccuiot.iotc.Application.logStartupProfileInfo:679) - The following profiles are active: dev
+2020-04-07 22:46:24,081  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:244) - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-07 22:46:24,084  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:126) - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-07 22:46:24,114  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:182) - Finished Spring Data repository scanning in 17ms. Found 0 repository interfaces.
+2020-04-07 22:46:24,211  WARN main (org.mybatis.spring.mapper.ClassPathMapperScanner.warn:44) - No MyBatis mapper was found in '[ccuiot.iotc]' package. Please check your configuration.
+2020-04-07 22:46:24,548  INFO main (org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$50b0b1d3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-07 22:46:24,955  INFO main (org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize:90) - Tomcat initialized with port(s): 8180 (http)
+2020-04-07 22:46:25,131  INFO main (org.springframework.web.context.ContextLoader.prepareWebApplicationContext:296) - Root WebApplicationContext: initialization completed in 2077 ms
+2020-04-07 22:46:27,231  INFO main (org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver.<init>:59) - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-04-07 22:46:27,316  INFO main (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:171) - Initializing ExecutorService
+2020-04-07 22:46:27,317  INFO main (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:171) - Initializing ExecutorService 'transferTaskExecutor'
+2020-04-07 22:46:27,759  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-07 22:46:27,760  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-07 22:46:27,761  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-07 22:46:27,762  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache:83) - Clear EntityHelper entityTableMap cache.
+2020-04-07 22:46:28,393  INFO main (org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareConnection:460) - Attempting to connect to: [192.168.38.131:5672]
+2020-04-07 22:46:28,427  INFO main (org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareConnection:496) - Created new connection: rabbitConnectionFactory#12209826:0/SimpleConnection@6a8da5c5 [delegate=amqp://admin@192.168.38.131:5672/, localPort= 53014]
+2020-04-07 22:46:28,434  INFO main (org.springframework.amqp.rabbit.core.RabbitAdmin.initialize:568) - Auto-declaring a non-durable or auto-delete Exchange (iot-mqtt-exchange) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2020-04-07 22:46:28,484  INFO main (springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.onApplicationEvent:84) - Context refreshed
+2020-04-07 22:46:28,498  INFO main (springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.onApplicationEvent:87) - Found 1 custom documentation plugin(s)
+2020-04-07 22:46:28,508  INFO main (springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan:44) - Scanning for api listing references
+2020-04-07 22:46:28,661  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: listUsingGET_1
+2020-04-07 22:46:28,664  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: queryByTimeUsingGET_1
+2020-04-07 22:46:28,667  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: queryByTopicUsingGET_1
+2020-04-07 22:46:28,670  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_1
+2020-04-07 22:46:28,671  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_2
+2020-04-07 22:46:28,672  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_3
+2020-04-07 22:46:28,676  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: loginUsingPOST_1
+2020-04-07 22:46:28,682  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: loginUsingPOST_2
+2020-04-07 22:46:28,735  INFO main (org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start:204) - Tomcat started on port(s): 8180 (http) with context path '/iotc'
+2020-04-07 22:46:28,739  INFO main (ccuiot.iotc.Application.logStarted:59) - Started Application in 6.153 seconds (JVM running for 6.993)
+2020-04-07 22:46:32,775  INFO http-nio-8180-exec-1 (org.springframework.web.servlet.DispatcherServlet.initServletBean:524) - Initializing Servlet 'dispatcherServlet'
+2020-04-07 22:46:32,787  INFO http-nio-8180-exec-1 (org.springframework.web.servlet.DispatcherServlet.initServletBean:546) - Completed initialization in 12 ms
+2020-04-07 22:46:32,807  INFO http-nio-8180-exec-1 (ccuiot.iotc.interceptor.LoginInterceptor.preHandle:30) - 校验秘钥 null = null
+2020-04-07 22:46:32,894  INFO http-nio-8180-exec-1 (io.lettuce.core.EpollProvider.<clinit>:68) - Starting without optional epoll library
+2020-04-07 22:46:33,060  INFO http-nio-8180-exec-1 (io.lettuce.core.KqueueProvider.<clinit>:70) - Starting without optional kqueue library
+2020-04-07 22:46:34,408  INFO http-nio-8180-exec-2 (ccuiot.iotc.interceptor.LoginInterceptor.preHandle:30) - 校验秘钥 null = null
+2020-04-07 22:47:22,460  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown:586) - Waiting for workers to finish.
+2020-04-07 22:47:22,636  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown:589) - Successfully waited for workers to finish.
+2020-04-07 22:47:22,641  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.shutdown:1226) - Shutdown ignored - container is not active already
+2020-04-07 22:47:22,643  INFO Thread-4 (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:208) - Shutting down ExecutorService 'transferTaskExecutor'
+2020-04-07 22:47:27,288  INFO background-preinit (org.hibernate.validator.internal.util.Version.<clinit>:21) - HV000001: Hibernate Validator 6.0.16.Final
+2020-04-07 22:47:27,606  INFO main (ccuiot.iotc.Application.logStarting:50) - Starting Application on MacBook-Pro with PID 20256 (/Users/okay3r/Documents/workSpace/IoT_Cloud/iotc/iotc-api/target/classes started by okay3r in /Users/okay3r/Documents/workSpace/IoT_Cloud/iotc)
+2020-04-07 22:47:27,606  INFO main (ccuiot.iotc.Application.logStartupProfileInfo:679) - The following profiles are active: dev
+2020-04-07 22:47:28,763  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:244) - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-07 22:47:28,767  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:126) - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-07 22:47:28,798  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:182) - Finished Spring Data repository scanning in 17ms. Found 0 repository interfaces.
+2020-04-07 22:47:28,906  WARN main (org.mybatis.spring.mapper.ClassPathMapperScanner.warn:44) - No MyBatis mapper was found in '[ccuiot.iotc]' package. Please check your configuration.
+2020-04-07 22:47:29,232  INFO main (org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$110dbf48] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-07 22:47:29,625  INFO main (org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize:90) - Tomcat initialized with port(s): 8180 (http)
+2020-04-07 22:47:29,802  INFO main (org.springframework.web.context.ContextLoader.prepareWebApplicationContext:296) - Root WebApplicationContext: initialization completed in 2151 ms
+2020-04-07 22:47:31,802  INFO main (org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver.<init>:59) - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-04-07 22:47:31,883  INFO main (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:171) - Initializing ExecutorService
+2020-04-07 22:47:31,884  INFO main (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:171) - Initializing ExecutorService 'transferTaskExecutor'
+2020-04-07 22:47:32,293  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-07 22:47:32,294  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-07 22:47:32,294  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-07 22:47:32,295  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache:83) - Clear EntityHelper entityTableMap cache.
+2020-04-07 22:47:32,893  INFO main (org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareConnection:460) - Attempting to connect to: [192.168.38.131:5672]
+2020-04-07 22:47:32,927  INFO main (org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareConnection:496) - Created new connection: rabbitConnectionFactory#1231a1be:0/SimpleConnection@1d38cdde [delegate=amqp://admin@192.168.38.131:5672/, localPort= 53033]
+2020-04-07 22:47:32,933  INFO main (org.springframework.amqp.rabbit.core.RabbitAdmin.initialize:568) - Auto-declaring a non-durable or auto-delete Exchange (iot-mqtt-exchange) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2020-04-07 22:47:32,992  INFO main (springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.onApplicationEvent:84) - Context refreshed
+2020-04-07 22:47:33,007  INFO main (springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.onApplicationEvent:87) - Found 1 custom documentation plugin(s)
+2020-04-07 22:47:33,019  INFO main (springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan:44) - Scanning for api listing references
+2020-04-07 22:47:33,211  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: listUsingGET_1
+2020-04-07 22:47:33,215  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: queryByTimeUsingGET_1
+2020-04-07 22:47:33,217  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: queryByTopicUsingGET_1
+2020-04-07 22:47:33,220  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_1
+2020-04-07 22:47:33,221  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_2
+2020-04-07 22:47:33,222  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_3
+2020-04-07 22:47:33,225  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: loginUsingPOST_1
+2020-04-07 22:47:33,232  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: loginUsingPOST_2
+2020-04-07 22:47:33,281  INFO main (org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start:204) - Tomcat started on port(s): 8180 (http) with context path '/iotc'
+2020-04-07 22:47:33,284  INFO main (ccuiot.iotc.Application.logStarted:59) - Started Application in 6.099 seconds (JVM running for 6.786)
+2020-04-07 22:47:57,421  INFO http-nio-8180-exec-1 (org.springframework.web.servlet.DispatcherServlet.initServletBean:524) - Initializing Servlet 'dispatcherServlet'
+2020-04-07 22:47:57,436  INFO http-nio-8180-exec-1 (org.springframework.web.servlet.DispatcherServlet.initServletBean:546) - Completed initialization in 14 ms
+2020-04-07 22:47:57,458  INFO http-nio-8180-exec-1 (ccuiot.iotc.interceptor.LoginInterceptor.preHandle:30) - 校验秘钥 null = null
+2020-04-07 22:47:57,545  INFO http-nio-8180-exec-1 (io.lettuce.core.EpollProvider.<clinit>:68) - Starting without optional epoll library
+2020-04-07 22:47:57,547  INFO http-nio-8180-exec-1 (io.lettuce.core.KqueueProvider.<clinit>:70) - Starting without optional kqueue library
+2020-04-07 22:48:04,267  INFO http-nio-8180-exec-2 (ccuiot.iotc.interceptor.LoginInterceptor.preHandle:30) - 校验秘钥  = 
+2020-04-07 22:52:15,655  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown:586) - Waiting for workers to finish.
+2020-04-07 22:52:15,933  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown:589) - Successfully waited for workers to finish.
+2020-04-07 22:52:15,945  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.shutdown:1226) - Shutdown ignored - container is not active already
+2020-04-07 22:52:15,948  INFO Thread-4 (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:208) - Shutting down ExecutorService 'transferTaskExecutor'
+2020-04-07 22:52:20,672  INFO background-preinit (org.hibernate.validator.internal.util.Version.<clinit>:21) - HV000001: Hibernate Validator 6.0.16.Final
+2020-04-07 22:52:20,962  INFO main (ccuiot.iotc.Application.logStarting:50) - Starting Application on MacBook-Pro with PID 20289 (/Users/okay3r/Documents/workSpace/IoT_Cloud/iotc/iotc-api/target/classes started by okay3r in /Users/okay3r/Documents/workSpace/IoT_Cloud/iotc)
+2020-04-07 22:52:20,962  INFO main (ccuiot.iotc.Application.logStartupProfileInfo:679) - The following profiles are active: dev
+2020-04-07 22:52:22,101  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:244) - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-07 22:52:22,104  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:126) - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-07 22:52:22,132  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:182) - Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2020-04-07 22:52:22,236  WARN main (org.mybatis.spring.mapper.ClassPathMapperScanner.warn:44) - No MyBatis mapper was found in '[ccuiot.iotc]' package. Please check your configuration.
+2020-04-07 22:52:22,566  INFO main (org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4c6a3c2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-07 22:52:22,964  INFO main (org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize:90) - Tomcat initialized with port(s): 8180 (http)
+2020-04-07 22:52:23,143  INFO main (org.springframework.web.context.ContextLoader.prepareWebApplicationContext:296) - Root WebApplicationContext: initialization completed in 2130 ms
+2020-04-07 22:52:25,240  INFO main (org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver.<init>:59) - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-04-07 22:52:25,324  INFO main (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:171) - Initializing ExecutorService
+2020-04-07 22:52:25,326  INFO main (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:171) - Initializing ExecutorService 'transferTaskExecutor'
+2020-04-07 22:52:25,750  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-07 22:52:25,751  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-07 22:52:25,751  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-07 22:52:25,752  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache:83) - Clear EntityHelper entityTableMap cache.
+2020-04-07 22:52:26,356  INFO main (org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareConnection:460) - Attempting to connect to: [192.168.38.131:5672]
+2020-04-07 22:52:26,393  INFO main (org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareConnection:496) - Created new connection: rabbitConnectionFactory#27bb74e1:0/SimpleConnection@1b5d1d9 [delegate=amqp://admin@192.168.38.131:5672/, localPort= 53163]
+2020-04-07 22:52:26,400  INFO main (org.springframework.amqp.rabbit.core.RabbitAdmin.initialize:568) - Auto-declaring a non-durable or auto-delete Exchange (iot-mqtt-exchange) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2020-04-07 22:52:26,454  INFO main (springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.onApplicationEvent:84) - Context refreshed
+2020-04-07 22:52:26,469  INFO main (springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.onApplicationEvent:87) - Found 1 custom documentation plugin(s)
+2020-04-07 22:52:26,480  INFO main (springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan:44) - Scanning for api listing references
+2020-04-07 22:52:26,623  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: listUsingGET_1
+2020-04-07 22:52:26,626  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: queryByTimeUsingGET_1
+2020-04-07 22:52:26,628  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: queryByTopicUsingGET_1
+2020-04-07 22:52:26,632  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_1
+2020-04-07 22:52:26,633  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_2
+2020-04-07 22:52:26,634  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_3
+2020-04-07 22:52:26,637  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: loginUsingPOST_1
+2020-04-07 22:52:26,644  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: loginUsingPOST_2
+2020-04-07 22:52:26,694  INFO main (org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start:204) - Tomcat started on port(s): 8180 (http) with context path '/iotc'
+2020-04-07 22:52:26,697  INFO main (ccuiot.iotc.Application.logStarted:59) - Started Application in 6.141 seconds (JVM running for 6.786)
+2020-04-07 22:52:58,887  INFO http-nio-8180-exec-2 (org.springframework.web.servlet.DispatcherServlet.initServletBean:524) - Initializing Servlet 'dispatcherServlet'
+2020-04-07 22:52:58,904  INFO http-nio-8180-exec-2 (org.springframework.web.servlet.DispatcherServlet.initServletBean:546) - Completed initialization in 16 ms
+2020-04-07 22:52:58,924  INFO http-nio-8180-exec-2 (ccuiot.iotc.interceptor.LoginInterceptor.preHandle:30) - 校验秘钥  = 
+2020-04-07 22:52:59,213  INFO http-nio-8180-exec-2 (io.lettuce.core.EpollProvider.<clinit>:68) - Starting without optional epoll library
+2020-04-07 22:52:59,215  INFO http-nio-8180-exec-2 (io.lettuce.core.KqueueProvider.<clinit>:70) - Starting without optional kqueue library
+2020-04-07 22:53:09,835  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown:586) - Waiting for workers to finish.
+2020-04-07 22:53:10,612  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown:589) - Successfully waited for workers to finish.
+2020-04-07 22:53:10,617  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.shutdown:1226) - Shutdown ignored - container is not active already
+2020-04-07 22:53:10,618  INFO Thread-4 (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:208) - Shutting down ExecutorService 'transferTaskExecutor'
+2020-04-07 22:53:15,297  INFO background-preinit (org.hibernate.validator.internal.util.Version.<clinit>:21) - HV000001: Hibernate Validator 6.0.16.Final
+2020-04-07 22:53:15,575  INFO main (ccuiot.iotc.Application.logStarting:50) - Starting Application on MacBook-Pro with PID 20299 (/Users/okay3r/Documents/workSpace/IoT_Cloud/iotc/iotc-api/target/classes started by okay3r in /Users/okay3r/Documents/workSpace/IoT_Cloud/iotc)
+2020-04-07 22:53:15,575  INFO main (ccuiot.iotc.Application.logStartupProfileInfo:679) - The following profiles are active: dev
+2020-04-07 22:53:16,696  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:244) - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-07 22:53:16,700  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:126) - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-07 22:53:16,727  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:182) - Finished Spring Data repository scanning in 16ms. Found 0 repository interfaces.
+2020-04-07 22:53:16,822  WARN main (org.mybatis.spring.mapper.ClassPathMapperScanner.warn:44) - No MyBatis mapper was found in '[ccuiot.iotc]' package. Please check your configuration.
+2020-04-07 22:53:17,165  INFO main (org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2293057f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-07 22:53:17,570  INFO main (org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize:90) - Tomcat initialized with port(s): 8180 (http)
+2020-04-07 22:53:17,748  INFO main (org.springframework.web.context.ContextLoader.prepareWebApplicationContext:296) - Root WebApplicationContext: initialization completed in 2130 ms
+2020-04-07 22:53:19,914  INFO main (org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver.<init>:59) - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-04-07 22:53:19,996  INFO main (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:171) - Initializing ExecutorService
+2020-04-07 22:53:19,998  INFO main (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:171) - Initializing ExecutorService 'transferTaskExecutor'
+2020-04-07 22:53:20,445  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-07 22:53:20,446  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-07 22:53:20,447  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-07 22:53:20,448  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache:83) - Clear EntityHelper entityTableMap cache.
+2020-04-07 22:53:21,085  INFO main (org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareConnection:460) - Attempting to connect to: [192.168.38.131:5672]
+2020-04-07 22:53:21,119  INFO main (org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareConnection:496) - Created new connection: rabbitConnectionFactory#d3cce46:0/SimpleConnection@1f1c7fde [delegate=amqp://admin@192.168.38.131:5672/, localPort= 53186]
+2020-04-07 22:53:21,126  INFO main (org.springframework.amqp.rabbit.core.RabbitAdmin.initialize:568) - Auto-declaring a non-durable or auto-delete Exchange (iot-mqtt-exchange) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2020-04-07 22:53:21,178  INFO main (springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.onApplicationEvent:84) - Context refreshed
+2020-04-07 22:53:21,191  INFO main (springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.onApplicationEvent:87) - Found 1 custom documentation plugin(s)
+2020-04-07 22:53:21,201  INFO main (springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan:44) - Scanning for api listing references
+2020-04-07 22:53:21,361  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: listUsingGET_1
+2020-04-07 22:53:21,365  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: queryByTimeUsingGET_1
+2020-04-07 22:53:21,368  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: queryByTopicUsingGET_1
+2020-04-07 22:53:21,371  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_1
+2020-04-07 22:53:21,372  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_2
+2020-04-07 22:53:21,374  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_3
+2020-04-07 22:53:21,377  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: loginUsingPOST_1
+2020-04-07 22:53:21,384  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: loginUsingPOST_2
+2020-04-07 22:53:21,437  INFO main (org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start:204) - Tomcat started on port(s): 8180 (http) with context path '/iotc'
+2020-04-07 22:53:21,440  INFO main (ccuiot.iotc.Application.logStarted:59) - Started Application in 6.247 seconds (JVM running for 6.896)
+2020-04-07 22:53:32,105  INFO http-nio-8180-exec-1 (org.springframework.web.servlet.DispatcherServlet.initServletBean:524) - Initializing Servlet 'dispatcherServlet'
+2020-04-07 22:53:32,122  INFO http-nio-8180-exec-1 (org.springframework.web.servlet.DispatcherServlet.initServletBean:546) - Completed initialization in 15 ms
+2020-04-07 22:53:32,142  INFO http-nio-8180-exec-1 (ccuiot.iotc.interceptor.LoginInterceptor.preHandle:30) - 校验秘钥  = 
+2020-04-07 22:53:32,421  INFO http-nio-8180-exec-1 (io.lettuce.core.EpollProvider.<clinit>:68) - Starting without optional epoll library
+2020-04-07 22:53:32,422  INFO http-nio-8180-exec-1 (io.lettuce.core.KqueueProvider.<clinit>:70) - Starting without optional kqueue library
+2020-04-07 22:53:48,687  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown:586) - Waiting for workers to finish.
+2020-04-07 22:53:49,268  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown:589) - Successfully waited for workers to finish.
+2020-04-07 22:53:49,272  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.shutdown:1226) - Shutdown ignored - container is not active already
+2020-04-07 22:53:49,274  INFO Thread-4 (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:208) - Shutting down ExecutorService 'transferTaskExecutor'
+2020-04-07 22:53:54,084  INFO background-preinit (org.hibernate.validator.internal.util.Version.<clinit>:21) - HV000001: Hibernate Validator 6.0.16.Final
+2020-04-07 22:53:54,391  INFO main (ccuiot.iotc.Application.logStarting:50) - Starting Application on MacBook-Pro with PID 20305 (/Users/okay3r/Documents/workSpace/IoT_Cloud/iotc/iotc-api/target/classes started by okay3r in /Users/okay3r/Documents/workSpace/IoT_Cloud/iotc)
+2020-04-07 22:53:54,392  INFO main (ccuiot.iotc.Application.logStartupProfileInfo:679) - The following profiles are active: dev
+2020-04-07 22:53:55,552  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:244) - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-07 22:53:55,556  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:126) - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-04-07 22:53:55,587  INFO main (org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:182) - Finished Spring Data repository scanning in 19ms. Found 0 repository interfaces.
+2020-04-07 22:53:55,704  WARN main (org.mybatis.spring.mapper.ClassPathMapperScanner.warn:44) - No MyBatis mapper was found in '[ccuiot.iotc]' package. Please check your configuration.
+2020-04-07 22:53:56,057  INFO main (org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ef892e2c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-07 22:53:56,452  INFO main (org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize:90) - Tomcat initialized with port(s): 8180 (http)
+2020-04-07 22:53:56,630  INFO main (org.springframework.web.context.ContextLoader.prepareWebApplicationContext:296) - Root WebApplicationContext: initialization completed in 2190 ms
+2020-04-07 22:53:58,715  INFO main (org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver.<init>:59) - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-04-07 22:53:58,872  INFO main (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:171) - Initializing ExecutorService
+2020-04-07 22:53:58,874  INFO main (org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:171) - Initializing ExecutorService 'transferTaskExecutor'
+2020-04-07 22:53:59,337  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.util.MsUtil CLASS_CACHE cache.
+2020-04-07 22:53:59,337  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.genid.GenIdUtil CACHE cache.
+2020-04-07 22:53:59,338  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeStaticCache:60) - Clear tk.mybatis.mapper.version.VersionUtil CACHE cache.
+2020-04-07 22:53:59,339  INFO main (tk.mybatis.mapper.autoconfigure.MapperCacheDisabler.removeEntityHelperCache:83) - Clear EntityHelper entityTableMap cache.
+2020-04-07 22:53:59,949  INFO main (org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareConnection:460) - Attempting to connect to: [192.168.38.131:5672]
+2020-04-07 22:53:59,984  INFO main (org.springframework.amqp.rabbit.connection.CachingConnectionFactory.createBareConnection:496) - Created new connection: rabbitConnectionFactory#6fc1a8f6:0/SimpleConnection@563392e5 [delegate=amqp://admin@192.168.38.131:5672/, localPort= 53204]
+2020-04-07 22:53:59,990  INFO main (org.springframework.amqp.rabbit.core.RabbitAdmin.initialize:568) - Auto-declaring a non-durable or auto-delete Exchange (iot-mqtt-exchange) durable:false, auto-delete:false. It will be deleted by the broker if it shuts down, and can be redeclared by closing and reopening the connection.
+2020-04-07 22:54:00,042  INFO main (springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.onApplicationEvent:84) - Context refreshed
+2020-04-07 22:54:00,056  INFO main (springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper.onApplicationEvent:87) - Found 1 custom documentation plugin(s)
+2020-04-07 22:54:00,066  INFO main (springfox.documentation.spring.web.scanners.ApiListingReferenceScanner.scan:44) - Scanning for api listing references
+2020-04-07 22:54:00,213  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: listUsingGET_1
+2020-04-07 22:54:00,218  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: queryByTimeUsingGET_1
+2020-04-07 22:54:00,220  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: queryByTopicUsingGET_1
+2020-04-07 22:54:00,224  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_1
+2020-04-07 22:54:00,225  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_2
+2020-04-07 22:54:00,227  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: handleUsingGET_3
+2020-04-07 22:54:00,229  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: loginUsingPOST_1
+2020-04-07 22:54:00,236  INFO main (springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator.startingWith:40) - Generating unique operation named: loginUsingPOST_2
+2020-04-07 22:54:00,287  INFO main (org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start:204) - Tomcat started on port(s): 8180 (http) with context path '/iotc'
+2020-04-07 22:54:00,290  INFO main (ccuiot.iotc.Application.logStarted:59) - Started Application in 6.314 seconds (JVM running for 7.008)
+2020-04-07 22:54:02,265  INFO http-nio-8180-exec-1 (org.springframework.web.servlet.DispatcherServlet.initServletBean:524) - Initializing Servlet 'dispatcherServlet'
+2020-04-07 22:54:02,281  INFO http-nio-8180-exec-1 (org.springframework.web.servlet.DispatcherServlet.initServletBean:546) - Completed initialization in 16 ms
+2020-04-07 22:54:02,300  INFO http-nio-8180-exec-1 (ccuiot.iotc.interceptor.LoginInterceptor.preHandle:30) - 校验秘钥  = 
+2020-04-07 22:54:02,423  INFO http-nio-8180-exec-1 (io.lettuce.core.EpollProvider.<clinit>:68) - Starting without optional epoll library
+2020-04-07 22:54:02,424  INFO http-nio-8180-exec-1 (io.lettuce.core.KqueueProvider.<clinit>:70) - Starting without optional kqueue library
+2020-04-07 22:55:42,841  INFO http-nio-8180-exec-3 (ccuiot.iotc.aspect.WebLogAspect.doBefore:42) - REQUEST :  POST @ http://localhost:8180/iotc/passport/login [ccuiot.iotc.controller.PassportController.login] [ARGS : [tom, 123123]]
+2020-04-07 22:55:42,943  INFO http-nio-8180-exec-3 (com.zaxxer.hikari.HikariDataSource.getConnection:110) - DateSourceHikariCP - Starting...
+2020-04-07 22:55:43,192  INFO http-nio-8180-exec-3 (com.zaxxer.hikari.HikariDataSource.getConnection:123) - DateSourceHikariCP - Start completed.
+2020-04-07 22:55:43,216  INFO http-nio-8180-exec-3 (ccuiot.iotc.aspect.ServiceLogAspect.recordTimeLog:65) - Service 执行完毕 [355ms] 位于 class ccuiot.iotc.service.impl.UserServiceImpl.queryUserForLogin
+2020-04-07 22:55:43,221  INFO http-nio-8180-exec-3 (ccuiot.iotc.aspect.WebLogAspect.doAfterReturning:49) - RESPONSE : ccuiot.iotc.utils.ApiJsonResult@5fdf8e25
+2020-04-07 22:56:23,719  INFO http-nio-8180-exec-4 (ccuiot.iotc.aspect.WebLogAspect.doBefore:42) - REQUEST :  POST @ http://localhost:8180/iotc/passport/login [ccuiot.iotc.controller.PassportController.login] [ARGS : [tom, 123]]
+2020-04-07 22:56:23,739  INFO http-nio-8180-exec-4 (ccuiot.iotc.aspect.ServiceLogAspect.recordTimeLog:65) - Service 执行完毕 [18ms] 位于 class ccuiot.iotc.service.impl.UserServiceImpl.queryUserForLogin
+2020-04-07 22:56:23,739  INFO http-nio-8180-exec-4 (ccuiot.iotc.aspect.WebLogAspect.doAfterReturning:49) - RESPONSE : ccuiot.iotc.utils.ApiJsonResult@391abd08
+2020-04-07 22:56:28,835  INFO http-nio-8180-exec-5 (ccuiot.iotc.aspect.WebLogAspect.doBefore:42) - REQUEST :  POST @ http://localhost:8180/iotc/passport/login [ccuiot.iotc.controller.PassportController.login] [ARGS : [tom, 1231]]
+2020-04-07 22:56:28,838  INFO http-nio-8180-exec-5 (ccuiot.iotc.aspect.ServiceLogAspect.recordTimeLog:65) - Service 执行完毕 [3ms] 位于 class ccuiot.iotc.service.impl.UserServiceImpl.queryUserForLogin
+2020-04-07 22:56:28,839  INFO http-nio-8180-exec-5 (ccuiot.iotc.aspect.WebLogAspect.doAfterReturning:49) - RESPONSE : ccuiot.iotc.utils.ApiJsonResult@5ee6b260
+2020-04-07 22:56:33,457  INFO http-nio-8180-exec-6 (ccuiot.iotc.aspect.WebLogAspect.doBefore:42) - REQUEST :  POST @ http://localhost:8180/iotc/passport/login [ccuiot.iotc.controller.PassportController.login] [ARGS : [tom, 123]]
+2020-04-07 22:56:33,462  INFO http-nio-8180-exec-6 (ccuiot.iotc.aspect.ServiceLogAspect.recordTimeLog:65) - Service 执行完毕 [5ms] 位于 class ccuiot.iotc.service.impl.UserServiceImpl.queryUserForLogin
+2020-04-07 22:56:33,462  INFO http-nio-8180-exec-6 (ccuiot.iotc.aspect.WebLogAspect.doAfterReturning:49) - RESPONSE : ccuiot.iotc.utils.ApiJsonResult@3d0ea5da
+2020-04-07 22:57:13,494  INFO http-nio-8180-exec-7 (ccuiot.iotc.interceptor.LoginInterceptor.preHandle:30) - 校验秘钥 tom = h1BWJP/KRlT7SNfcW6+3kQ==
+2020-04-07 22:57:13,536  INFO http-nio-8180-exec-7 (ccuiot.iotc.aspect.WebLogAspect.doBefore:42) - REQUEST :  GET @ http://localhost:8180/iotc/sub/queryByTime [ccuiot.iotc.controller.MqttSubscribeController.queryByTime] [ARGS : [Tue Apr 07 15:04:37 CST 2020, Tue Apr 07 15:05:37 CST 2020, null, null]]
+2020-04-07 22:57:13,614  INFO http-nio-8180-exec-7 (ccuiot.iotc.aspect.ServiceLogAspect.recordTimeLog:65) - Service 执行完毕 [76ms] 位于 class ccuiot.iotc.service.impl.MqttSubServiceImpl.queryByTime
+2020-04-07 22:57:13,615  INFO http-nio-8180-exec-7 (ccuiot.iotc.aspect.WebLogAspect.doAfterReturning:49) - RESPONSE : ccuiot.iotc.utils.ApiJsonResult@3c0f9d31
+2020-04-07 22:57:55,570  INFO http-nio-8180-exec-8 (ccuiot.iotc.interceptor.LoginInterceptor.preHandle:30) - 校验秘钥 tom = h1BWJP/KRlT7SNfcW6+3kQ==
+2020-04-07 22:57:55,575  INFO http-nio-8180-exec-8 (ccuiot.iotc.aspect.WebLogAspect.doBefore:42) - REQUEST :  GET @ http://localhost:8180/iotc/sub/queryByTime [ccuiot.iotc.controller.MqttSubscribeController.queryByTime] [ARGS : [Mon Apr 06 21:14:19 CST 2020, Tue Apr 07 15:05:37 CST 2020, null, null]]
+2020-04-07 22:57:55,587  INFO http-nio-8180-exec-8 (ccuiot.iotc.aspect.ServiceLogAspect.recordTimeLog:65) - Service 执行完毕 [11ms] 位于 class ccuiot.iotc.service.impl.MqttSubServiceImpl.queryByTime
+2020-04-07 22:57:55,587  INFO http-nio-8180-exec-8 (ccuiot.iotc.aspect.WebLogAspect.doAfterReturning:49) - RESPONSE : ccuiot.iotc.utils.ApiJsonResult@2414c5a3
+2020-04-07 22:58:33,140  INFO http-nio-8180-exec-9 (ccuiot.iotc.interceptor.LoginInterceptor.preHandle:30) - 校验秘钥 tom = h1BWJP/KRlT7SNfcW6+3kQ==
+2020-04-07 22:58:33,153  INFO http-nio-8180-exec-9 (ccuiot.iotc.aspect.WebLogAspect.doBefore:42) - REQUEST :  GET @ http://localhost:8180/iotc/sub/queryByTime [ccuiot.iotc.controller.MqttSubscribeController.queryByTime] [ARGS : [Mon Apr 06 21:14:19 CST 2020, Tue Apr 07 15:05:37 CST 2020, 1, 5]]
+2020-04-07 22:58:33,163  INFO http-nio-8180-exec-9 (ccuiot.iotc.aspect.ServiceLogAspect.recordTimeLog:65) - Service 执行完毕 [9ms] 位于 class ccuiot.iotc.service.impl.MqttSubServiceImpl.queryByTime
+2020-04-07 22:58:33,164  INFO http-nio-8180-exec-9 (ccuiot.iotc.aspect.WebLogAspect.doAfterReturning:49) - RESPONSE : ccuiot.iotc.utils.ApiJsonResult@556b6941
+2020-04-07 22:58:55,257  INFO http-nio-8180-exec-10 (ccuiot.iotc.aspect.WebLogAspect.doBefore:42) - REQUEST :  POST @ http://localhost:8180/iotc/passport/login [ccuiot.iotc.controller.PassportController.login] [ARGS : [tom, 123]]
+2020-04-07 22:58:55,264  INFO http-nio-8180-exec-10 (ccuiot.iotc.aspect.ServiceLogAspect.recordTimeLog:65) - Service 执行完毕 [5ms] 位于 class ccuiot.iotc.service.impl.UserServiceImpl.queryUserForLogin
+2020-04-07 22:58:55,265  INFO http-nio-8180-exec-10 (ccuiot.iotc.aspect.WebLogAspect.doAfterReturning:49) - RESPONSE : ccuiot.iotc.utils.ApiJsonResult@412c4092
+2020-04-07 22:59:14,307  INFO http-nio-8180-exec-1 (ccuiot.iotc.interceptor.LoginInterceptor.preHandle:30) - 校验秘钥 tom = AxE9Zuq6waKyfS+Igeqajw==
+2020-04-07 22:59:14,311  INFO http-nio-8180-exec-1 (ccuiot.iotc.aspect.WebLogAspect.doBefore:42) - REQUEST :  GET @ http://localhost:8180/iotc/sub/list [ccuiot.iotc.controller.MqttSubscribeController.list] [ARGS : [1, 5]]
+2020-04-07 22:59:14,318  INFO http-nio-8180-exec-1 (ccuiot.iotc.aspect.ServiceLogAspect.recordTimeLog:65) - Service 执行完毕 [6ms] 位于 class ccuiot.iotc.service.impl.MqttSubServiceImpl.list
+2020-04-07 22:59:14,318  INFO http-nio-8180-exec-1 (ccuiot.iotc.aspect.WebLogAspect.doAfterReturning:49) - RESPONSE : ccuiot.iotc.utils.ApiJsonResult@b3bdea6
+2020-04-07 23:01:07,582  INFO http-nio-8180-exec-3 (ccuiot.iotc.interceptor.LoginInterceptor.preHandle:30) - 校验秘钥 tom = AxE9Zuq6waKyfS+Igeqajw
+2020-04-07 23:02:27,419  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown:586) - Waiting for workers to finish.
