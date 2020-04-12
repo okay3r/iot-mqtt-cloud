@@ -23,6 +23,8 @@ public class RabbitConfig {
     @Value("${iot.rabbit.topic}")
     private String topic;
 
+
+
     @Bean
     public Queue queue() {
         return new Queue(queue);
