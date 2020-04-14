@@ -16,7 +16,7 @@ server:
 ############################################################
 spring:
   profiles:
-    active: dev
+    active: prod
   datasource:                                           # 数据源的相关配置
     type: com.zaxxer.hikari.HikariDataSource          # 数据源类型：HikariCP
     driver-class-name: com.mysql.jdbc.Driver          # mysql驱动
@@ -58,8 +58,7 @@ spring:
 mybatis:
   type-aliases-package: ccuiot.iotc.ccuiot.iotc.pojo        # 所有POJO类所在包路径
   mapper-locations: classpath:ccuiot.iotc.ccuiot.iotc.mapper/*.xml      # mapper映射文件
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
 
 
 ############################################################
