@@ -41,6 +41,7 @@ public class DataRecordServiceImpl implements DataRecordService {
         String parameterName = messageVo.getParameter();
         DataRecord dataRecord = new DataRecord();
 
+        //从redis中获取device信息，如果没有则直接抛出异常
         String deviceName = (String) this.redisOperator.get(RedisKeyEnum.DEVICE_KV.value + ":" + deviceId);
         String unit = (String) this.redisOperator.get(RedisKeyEnum.PARAM_KV.value + ":" + parameterName);
 
