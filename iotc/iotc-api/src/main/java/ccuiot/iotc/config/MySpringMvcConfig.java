@@ -28,6 +28,4 @@ public class MySpringMvcConfig implements WebMvcConfigurer {
         interceptorRegistration.excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**", "/doc.html/**");
         interceptorRegistration.excludePathPatterns("/passport/**","/hello");
     }
-
-
 }
