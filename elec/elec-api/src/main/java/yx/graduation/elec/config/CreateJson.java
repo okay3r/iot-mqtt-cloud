@@ -9,7 +9,7 @@ import java.util.List;
 public class CreateJson {
     public static void main(String[] args) {
         MessageVo messageVo = new MessageVo();
-        messageVo.setMsg("480");
+        messageVo.setMsg("150");
         messageVo.setDeviceId("200407A81KCFHKKP");
         messageVo.setParameter("dianya");
         String s = JSON.toJSONString(messageVo);
@@ -20,6 +20,7 @@ public class CreateJson {
 
         List<String> list = new ArrayList<>();
         list.add("200407A81KCFHKKP");
+        list.add("20012GADSAKPSDHK");
 
         System.out.println(JSON.toJSONString(list));
     }
