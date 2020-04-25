@@ -1,1 +1,0 @@
-2020-04-11 00:01:47,998  INFO Thread-4 (org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doShutdown:586) - Waiting for workers to finish.
