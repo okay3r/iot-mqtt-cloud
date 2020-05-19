@@ -50,12 +50,12 @@ public class Swagger2 {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("物联网云平台—接口api")        // 文档页标题
-                .contact(new Contact("ok",
+                .contact(new Contact("021641128王大瑞",
                         "https://www.ccuiot.cn",
                         "764893776@qq.com"))        // 联系人信息
                 .description("物联网工程D212实验室")  // 详细信息
                 .version("1.0.1")   // 文档版本号
-                .termsOfServiceUrl("https://www.okay3r.top") // 网站地址
+                .termsOfServiceUrl("https://www.ccuiot.cn") // 网站地址
                 .build();
     }
 

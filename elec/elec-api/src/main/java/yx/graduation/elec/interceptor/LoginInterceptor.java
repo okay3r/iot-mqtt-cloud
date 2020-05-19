@@ -22,6 +22,8 @@ public class LoginInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String username = request.getHeader("username");
         String secret = request.getHeader("secretKey");
+        // System.out.println(request.getCharacterEncoding());
+        System.out.println(username + ">>>" + secret);
         response.setContentType("text/plain;charset=gbk");
         response.setCharacterEncoding("gbk");
         if (StringUtils.isBlank(username) || StringUtils.isBlank(secret)) {

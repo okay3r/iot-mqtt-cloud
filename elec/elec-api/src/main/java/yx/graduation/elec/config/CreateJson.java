@@ -14,13 +14,14 @@ public class CreateJson {
         messageVo.setParameter("dianya");
         String s = JSON.toJSONString(messageVo);
         System.out.println(s);
+        //TODO msg数据前缺引号
         String to = "{\"deviceId\":\"dianji\",\"msg\":\"888\",\"parameter\":\"tem\"}\n";
         MessageVo vo = JSON.parseObject(to, MessageVo.class);
         System.out.println(vo);
 
         List<String> list = new ArrayList<>();
-        list.add("200407A81KCFHKKP");
-        list.add("20012GADSAKPSDHK");
+        list.add("2005117YT26HKKP0");
+        list.add("2005117ZYFW6K2NC");
 
         System.out.println(JSON.toJSONString(list));
     }
